@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns:SSIS="www.microsoft.com/SqlServer/SSIS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DeploymentModel>Project</DeploymentModel>
   <ProductVersion>17.0.1016.0</ProductVersion>
   <SchemaVersion>9.0.1.0</SchemaVersion>
@@ -12,7 +12,7 @@
   <DataSourceViews />
   <DeploymentModelSpecificContent>
     <Manifest>
-      <SSIS:Project SSIS:ProtectionLevel="DontSaveSensitive" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+      <SSIS:Project SSIS:ProtectionLevel="DontSaveSensitive">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{428369cd-555e-49b8-b06f-8260c7486cee}</SSIS:Property>
           <SSIS:Property SSIS:Name="Name">HealthRetailers_SSIS</SSIS:Property>
@@ -3431,7 +3431,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Initial Catalog=SA_Health;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-HealthRetailers_SSIS-{86260499-4F22-4727-BD63-EEF3CEBCD0DD}Connexion de données2;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=localhost;Initial Catalog=SA_Health_Dimensions;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-HealthRetailers_SSIS-{86260499-4F22-4727-BD63-EEF3CEBCD0DD}Connexion de données2;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -3578,7 +3578,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Initial Catalog=DW_Health;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-HealthRetailers_SSIS-{19232D52-F06A-430C-B463-ABB55696254A}Connexion de données3;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=localhost;Initial Catalog=DW_Health_Dimensions;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-HealthRetailers_SSIS-{19232D52-F06A-430C-B463-ABB55696254A}Connexion de données3;Auto Translate=False;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -3743,7 +3743,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Initial Catalog=SA_Health;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-EL_SI_SA-{9AB13CAB-ABE1-4C84-9CF4-CC4B7E71AD8E}Connexion de données2;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=localhost;Initial Catalog=SA_Health_Dimensions;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-EL_SI_SA-{9AB13CAB-ABE1-4C84-9CF4-CC4B7E71AD8E}Connexion de données2;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3916,7 +3916,7 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
-        <TargetServerVersion>SQLServer2025</TargetServerVersion>
+        <TargetServerVersion>SQLServer2022</TargetServerVersion>
         <AzureMode>false</AzureMode>
         <LinkedAzureTenantId />
         <LinkedAzureAccountId />

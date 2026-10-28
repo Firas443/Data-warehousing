@@ -1,64 +1,13 @@
-﻿<?xml version="1.0"?>
-<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="ProductStocks.csv"
-  DTS:DTSID="{E320D2EC-50F1-4C6E-A36F-828C3D5F9F39}"
-  DTS:CreationName="FLATFILE">
+<?xml version='1.0' encoding='utf-8'?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="ProductStocks.csv" DTS:DTSID="{E320D2EC-50F1-4C6E-A36F-828C3D5F9F39}" DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
-    <DTS:ConnectionManager
-      DTS:Format="Delimited"
-      DTS:LocaleID="1036"
-      DTS:HeaderRowDelimiter="_x000D__x000A_"
-      DTS:ColumnNamesInFirstDataRow="True"
-      DTS:RowDelimiter=""
-      DTS:TextQualifier="_x0022_"
-      DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\amoul\OneDrive\Bureau\3AI\OneDrive_1_24-09-2026\ProductStocks.csv">
+    <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1036" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:ColumnNamesInFirstDataRow="True" DTS:RowDelimiter="" DTS:TextQualifier="_x0022_" DTS:CodePage="1252" DTS:ConnectionString="C:\Users\firas\OneDrive\Documents\ssis\HealthRetailers_DW_amal\data\transport\ProductStocks.csv" DTS:Unicode="True">
       <DTS:FlatFileColumns>
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Id"
-          DTS:DTSID="{FF30A0A1-95B8-4EBE-8483-A2858060A1A8}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Quantity"
-          DTS:DTSID="{16D78FB2-4B51-48FB-9F12-29BA19F1EC5D}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Stock_Id"
-          DTS:DTSID="{2D34064B-B02E-4106-A6AD-6EC85F5B72CF}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Product_Id"
-          DTS:DTSID="{A8901226-2160-4AC6-A94A-48D40BEEA50C}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x000D__x000A_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="TotalQuantity"
-          DTS:DTSID="{DB9E8B06-0B11-46B1-9BC6-4F522320E810}"
-          DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Id" DTS:DTSID="{FF30A0A1-95B8-4EBE-8483-A2858060A1A8}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Quantity" DTS:DTSID="{16D78FB2-4B51-48FB-9F12-29BA19F1EC5D}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Stock_Id" DTS:DTSID="{2D34064B-B02E-4106-A6AD-6EC85F5B72CF}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Product_Id" DTS:DTSID="{A8901226-2160-4AC6-A94A-48D40BEEA50C}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="TotalQuantity" DTS:DTSID="{DB9E8B06-0B11-46B1-9BC6-4F522320E810}" DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
   </DTS:ObjectData>

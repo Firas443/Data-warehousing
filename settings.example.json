@@ -1,0 +1,5 @@
+﻿{
+  "Server": "localhost",
+  "StagingDatabase": "SA_Health_Dimensions",
+  "WarehouseDatabase": "DW_Health_Dimensions"
+}

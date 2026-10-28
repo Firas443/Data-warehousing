@@ -1,154 +1,23 @@
-﻿<?xml version="1.0"?>
-<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Produits.csv"
-  DTS:DTSID="{9C8FEF04-062A-49FE-A292-61AA42417083}"
-  DTS:CreationName="FLATFILE">
+<?xml version='1.0' encoding='utf-8'?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="Produits.csv" DTS:DTSID="{9C8FEF04-062A-49FE-A292-61AA42417083}" DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
-    <DTS:ConnectionManager
-      DTS:Format="Delimited"
-      DTS:LocaleID="1036"
-      DTS:HeaderRowDelimiter="_x000D__x000A_"
-      DTS:ColumnNamesInFirstDataRow="True"
-      DTS:RowDelimiter=""
-      DTS:TextQualifier="_x0022_"
-      DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\amoul\OneDrive\Bureau\3AI\OneDrive_1_24-09-2026\Produits - 24112025081625 (2).csv">
+    <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1036" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:ColumnNamesInFirstDataRow="True" DTS:RowDelimiter="" DTS:TextQualifier="_x0022_" DTS:CodePage="1252" DTS:ConnectionString="C:\Users\firas\OneDrive\Documents\ssis\HealthRetailers_DW_amal\data\transport\Produits.csv" DTS:Unicode="True">
       <DTS:FlatFileColumns>
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Code"
-          DTS:DTSID="{FB355E9A-141C-48C6-8628-A74C1CF3A4F2}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="LibellÃ©"
-          DTS:DTSID="{42BD1BD7-7016-443F-8F02-6E5E1FCB740B}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="LibellÃ© ticket de caisse"
-          DTS:DTSID="{DC5D9A96-B500-483C-B073-08F06F3064CD}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Famille"
-          DTS:DTSID="{7C6AF669-BA89-48B7-B31B-21475CFDD167}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Marque"
-          DTS:DTSID="{40E56A31-5F4C-4018-8858-0E3A032A9E0A}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Prix d'achat HT"
-          DTS:DTSID="{EC5ED961-0E49-4432-B889-74FF290D60CA}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Prix de vente HT"
-          DTS:DTSID="{879EA364-66F7-4F1D-BB76-3B7E9EC9CDA1}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Tva"
-          DTS:DTSID="{C38F5F65-5F5A-4F22-AD62-361AFABF25DA}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Prix de vente TTC"
-          DTS:DTSID="{593AE38F-5F6C-4BDD-ACDD-BF87F3B2C800}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="QuantitÃ©"
-          DTS:DTSID="{25711C38-35F4-4030-A194-8B7590240979}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Poids (Kg)"
-          DTS:DTSID="{EF25307C-0C69-4865-8A29-80745D9D1FED}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="UnitÃ©"
-          DTS:DTSID="{73825C55-BE82-49FC-A43B-B287987CB9B8}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="DÃ©signation"
-          DTS:DTSID="{D375590A-0995-44E4-9E9E-0D92983C5BEB}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Observations"
-          DTS:DTSID="{98FCCA2E-C89C-487C-943A-EDD8427A812B}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x000D__x000A_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="QuantitÃ© d'Alerte"
-          DTS:DTSID="{F5FE7B29-825D-4D11-BBD0-271723CBFAC0}"
-          DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Code" DTS:DTSID="{FB355E9A-141C-48C6-8628-A74C1CF3A4F2}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="LibellÃ©" DTS:DTSID="{42BD1BD7-7016-443F-8F02-6E5E1FCB740B}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="LibellÃ© ticket de caisse" DTS:DTSID="{DC5D9A96-B500-483C-B073-08F06F3064CD}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Famille" DTS:DTSID="{7C6AF669-BA89-48B7-B31B-21475CFDD167}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Marque" DTS:DTSID="{40E56A31-5F4C-4018-8858-0E3A032A9E0A}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Prix d'achat HT" DTS:DTSID="{EC5ED961-0E49-4432-B889-74FF290D60CA}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Prix de vente HT" DTS:DTSID="{879EA364-66F7-4F1D-BB76-3B7E9EC9CDA1}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Tva" DTS:DTSID="{C38F5F65-5F5A-4F22-AD62-361AFABF25DA}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Prix de vente TTC" DTS:DTSID="{593AE38F-5F6C-4BDD-ACDD-BF87F3B2C800}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="QuantitÃ©" DTS:DTSID="{25711C38-35F4-4030-A194-8B7590240979}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Poids (Kg)" DTS:DTSID="{EF25307C-0C69-4865-8A29-80745D9D1FED}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="UnitÃ©" DTS:DTSID="{73825C55-BE82-49FC-A43B-B287987CB9B8}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="DÃ©signation" DTS:DTSID="{D375590A-0995-44E4-9E9E-0D92983C5BEB}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Observations" DTS:DTSID="{98FCCA2E-C89C-487C-943A-EDD8427A812B}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="QuantitÃ© d'Alerte" DTS:DTSID="{F5FE7B29-825D-4D11-BBD0-271723CBFAC0}" DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
   </DTS:ObjectData>

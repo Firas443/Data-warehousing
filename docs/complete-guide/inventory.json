@@ -1,0 +1,1879 @@
+{
+  "EL_SI_SA.dtsx": {
+    "tasks": [
+      {
+        "name": "Charger Clients_SA",
+        "ref": "Package\\Charger Clients_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger Clients_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[Clients_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger Clients_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger Clients_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger Clients_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger Clients_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger CompaniesList_SA",
+        "ref": "Package\\Charger CompaniesList_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger CompaniesList_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[CompaniesList_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger CompaniesList_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger CompaniesList_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger CompaniesList_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger CompaniesList_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger DocumentItem_SA",
+        "ref": "Package\\Charger DocumentItem_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger DocumentItem_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[DocumentItem_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger DocumentItem_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger DocumentItem_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger DocumentItem_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger DocumentItem_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger Documents_SA",
+        "ref": "Package\\Charger Documents_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger Documents_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[Documents_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger Documents_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger Documents_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger Documents_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger Documents_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger DocumentTypes_SA",
+        "ref": "Package\\Charger DocumentTypes_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger DocumentTypes_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[DocumentTypes_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger DocumentTypes_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger DocumentTypes_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger DocumentTypes_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger DocumentTypes_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger Events_SA",
+        "ref": "Package\\Charger Events_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger Events_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[Events_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger Events_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger Events_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger Events_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger Events_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger Fournisseurs_SA",
+        "ref": "Package\\Charger Fournisseurs_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger Fournisseurs_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[Fournisseurs_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger Fournisseurs_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger Fournisseurs_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger Fournisseurs_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger Fournisseurs_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger PayementList_SA",
+        "ref": "Package\\Charger PayementList_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger PayementList_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[PaymentsList_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger PayementList_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger PayementList_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger PayementList_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger PayementList_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger Payment_SA",
+        "ref": "Package\\Charger Payment_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger Payment_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[Payment_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger Payment_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger Payment_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger Payment_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger Payment_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger ProductBrands_SA",
+        "ref": "Package\\Charger ProductBrands_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger ProductBrands_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[ProductBrands_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger ProductBrands_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger ProductBrands_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger ProductBrands_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger ProductBrands_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger ProductStocks_SA",
+        "ref": "Package\\Charger ProductStocks_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger ProductStocks_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[ProductStocks_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger ProductStocks_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger ProductStocks_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger ProductStocks_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger ProductStocks_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger Produits_SA",
+        "ref": "Package\\Charger Produits_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger Produits_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[Produits_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger Produits_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger Produits_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger Produits_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger Produits_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger RelatedDocuments_SA",
+        "ref": "Package\\Charger RelatedDocuments_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger RelatedDocuments_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[RelatedDocuments_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger RelatedDocuments_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger RelatedDocuments_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger RelatedDocuments_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger RelatedDocuments_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger StockMovements_SA",
+        "ref": "Package\\Charger StockMovements_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger StockMovements_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[StockMovements_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger StockMovements_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger StockMovements_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger StockMovements_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger StockMovements_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger TransactionPayments_SA",
+        "ref": "Package\\Charger TransactionPayments_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger TransactionPayments_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[TransactionPayments_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger TransactionPayments_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger TransactionPayments_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger TransactionPayments_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger TransactionPayments_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger Transactions_SA",
+        "ref": "Package\\Charger Transactions_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger Transactions_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[Transactions_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger Transactions_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger Transactions_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger Transactions_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger Transactions_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Charger UsersSettings_SA",
+        "ref": "Package\\Charger UsersSettings_SA",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\Charger UsersSettings_SA\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[UsersSettings_SA]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\Charger UsersSettings_SA\\Source du fichier plat",
+            "name": "Source du fichier plat",
+            "type": "Microsoft.FlatFileSource",
+            "properties": {
+              "RetainNulls": "false",
+              "FileNameColumnName": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\Charger UsersSettings_SA.Paths[Sortie de source de fichier plat]",
+            "endId": "Package\\Charger UsersSettings_SA\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de source de fichier plat",
+            "startId": "Package\\Charger UsersSettings_SA\\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+          }
+        ]
+      },
+      {
+        "name": "Vider le SA",
+        "ref": "Package\\Vider le SA",
+        "type": "Microsoft.ExecuteSQLTask",
+        "components": [],
+        "paths": []
+      }
+    ],
+    "constraints": [
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{F23AE31C-9036-47C9-8C62-5249CDCC7599}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger Documents_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 1]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{7D262A6B-F0AE-4E4C-819B-22B761A64B5C}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 1",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger DocumentItem_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 10]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{1C3F06A2-7727-43EC-84E0-F4AF35E6E302}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 10",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger Fournisseurs_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 11]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{0DE7B8D6-90E1-4DE4-BB0E-B1C4F819CCB3}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 11",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger DocumentTypes_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 12]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{EE4D02FA-2303-4CD5-AE84-B9C14E708179}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 12",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger PayementList_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 13]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{E0E3D8BD-9D6E-4844-AD60-747DECF1D05B}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 13",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger StockMovements_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 14]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{C123D324-ABF8-4758-91C1-0B6328A331FA}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 14",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger Events_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 15]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{6ACFE02B-58F3-46BF-AB9D-48D68087A5F7}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 15",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger TransactionPayments_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 16]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{3EEB9732-398A-4375-AA50-CF5D4D7361B3}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 16",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger CompaniesList_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 2]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{F4F98823-C5E6-4653-8347-F8AAE83DD417}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 2",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger ProductStocks_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 3]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{A955B1CD-34E5-41F1-A06C-A4C220D54BA8}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 3",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger Transactions_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 4]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{F3D3F9EA-506E-4366-BDF9-B913DE5FFADB}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 4",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger RelatedDocuments_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 5]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{307D6044-D765-47FF-906B-1685646EF64D}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 5",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger Payment_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 6]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{10A8AEA5-B7AE-4EBD-8EE2-925352017B46}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 6",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger Clients_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 7]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{04D7856D-AD9E-4D8D-B16E-A9D7FBE3E89A}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 7",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger Produits_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 8]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{1CC1592F-7630-41AD-9243-2401D345D17B}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 8",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger ProductBrands_SA"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Contrainte 9]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{052E86C2-C7C5-4C73-9EB2-1D996D710CFC}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Vider le SA",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Contrainte 9",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Charger UsersSettings_SA"
+      }
+    ]
+  },
+  "ETL_SA_DW.dtsx": {
+    "tasks": [
+      {
+        "name": "alim_dim_client",
+        "ref": "Package\\alim_dim_client",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\alim_dim_client\\Commande OLE DB",
+            "name": "Commande OLE DB",
+            "type": "Microsoft.OLEDBCommand",
+            "properties": {
+              "CommandTimeout": "0",
+              "SqlCommand": "UPDATE [dbo].[dim_client]\nSET [Nom] = ?, [TypeClient] = ?, [EstClientIdentifie] = ?\nWHERE [Company_Id] = ?",
+              "DefaultCodePage": "1252"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_client\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[dim_client]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_client\\DIM_Client",
+            "name": "DIM_Client",
+            "type": "Microsoft.OLEDBSource",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[dim_client]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "SqlCommandVariable": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "0",
+              "ParameterMapping": null
+            }
+          },
+          {
+            "id": "Package\\alim_dim_client\\Fractionnement conditionnel",
+            "name": "Fractionnement conditionnel",
+            "type": "Microsoft.ConditionalSplit",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_dim_client\\Jointure de fusion",
+            "name": "Jointure de fusion",
+            "type": "Microsoft.MergeJoin",
+            "properties": {
+              "JoinType": "1",
+              "NumKeyColumns": "1",
+              "TreatNullsAsEqual": "true",
+              "MaxBuffersPerInput": "5"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_client\\SA_Client",
+            "name": "SA_Client",
+            "type": "Microsoft.OLEDBSource",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": null,
+              "OpenRowsetVariable": null,
+              "SqlCommand": "WITH ventes_docs AS (\n    SELECT d.Id, d.Transaction_Id\n    FROM Documents_SA d\n    WHERE d.State = '1'\n      AND d.DocumentType_Id IN ('1','4','5','6','7')\n      AND NOT EXISTS (SELECT 1 FROM RelatedDocuments_SA r WHERE r.Document1_Id = d.Id)\n      AND EXISTS (SELECT 1 FROM DocumentItem_SA i\n                  WHERE i.Document_Id = d.Id\n                    AND NULLIF(LTRIM(RTRIM(i.ProductStock_Id)), '') IS NOT NULL)\n),\nids AS (\n    SELECT ISNULL(TRY_CAST(NULLIF(LTRIM(RTRIM(t.Company_Id)), '') AS INT), -1) AS Company_Id\n    FROM ventes_docs v\n    LEFT JOIN Transactions_SA t ON t.Id = v.Transaction_Id\n    UNION SELECT -1\n    UNION SELECT 2\n    UNION SELECT TRY_CAST(c.Id AS INT)\n          FROM CompaniesList_SA c\n          JOIN Clients_SA cl ON LTRIM(RTRIM(cl.Code)) = LTRIM(RTRIM(c.Code))\n)\nSELECT i.Company_Id,\n       CAST(CASE WHEN i.Company_Id = -1 THEN N'NON RENSEIGNE'\n                 WHEN i.Company_Id = 2  THEN N'Client comptoir (anonyme)'\n                 ELSE COALESCE(\n                      NULLIF(LTRIM(RTRIM(SUBSTRING(r.NomRep, CHARINDEX(NCHAR(8212), r.NomRep) + 1, 200))), ''),\n                      NULLIF(LTRIM(RTRIM(REPLACE(c.Name, '|', ''))), ''),\n                      N'NON RENSEIGNE') END AS NVARCHAR(200)) AS Nom,\n       CAST(CASE WHEN i.Company_Id = -1 THEN N'NON RENSEIGNE'\n                 WHEN i.Company_Id = 2  THEN N'COMPTOIR_ANONYME'\n                 WHEN r.NomRep LIKE N'%Client particulier%' THEN N'PARTICULIER'\n                 WHEN r.NomRep LIKE N'%Laboratoire%'         THEN N'B2B - LABORATOIRE'\n                 ELSE N'NON RENSEIGNE' END AS NVARCHAR(30)) AS TypeClient,\n       CAST(CASE WHEN i.Company_Id IN (-1, 2) THEN 0 ELSE 1 END AS BIT) AS EstClientIdentifie\nFROM ids i\nLEFT JOIN CompaniesList_SA c  ON TRY_CAST(c.Id AS INT) = i.Company_Id\nLEFT JOIN Clients_SA cl       ON LTRIM(RTRIM(cl.Code)) = LTRIM(RTRIM(c.Code))\nCROSS APPLY (SELECT dbo.fn_reparer_accents(cl.Nom) AS NomRep) r\nWHERE i.Company_Id IS NOT NULL;",
+              "SqlCommandVariable": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "2",
+              "ParameterMapping": null
+            }
+          },
+          {
+            "id": "Package\\alim_dim_client\\Trier",
+            "name": "Trier",
+            "type": "Microsoft.Sort",
+            "properties": {
+              "EliminateDuplicates": "false",
+              "MaximumThreads": "-1"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_client\\Trier 1",
+            "name": "Trier 1",
+            "type": "Microsoft.Sort",
+            "properties": {
+              "EliminateDuplicates": "false",
+              "MaximumThreads": "-1"
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\alim_dim_client.Paths[INSERT]",
+            "endId": "Package\\alim_dim_client\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "INSERT",
+            "startId": "Package\\alim_dim_client\\Fractionnement conditionnel.Outputs[INSERT]"
+          },
+          {
+            "refId": "Package\\alim_dim_client.Paths[Sortie de jointure de fusion]",
+            "endId": "Package\\alim_dim_client\\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]",
+            "name": "Sortie de jointure de fusion",
+            "startId": "Package\\alim_dim_client\\Jointure de fusion.Outputs[Sortie de jointure de fusion]"
+          },
+          {
+            "refId": "Package\\alim_dim_client.Paths[Sortie de source OLE DB1]",
+            "endId": "Package\\alim_dim_client\\Trier 1.Inputs[Entrée de tri]",
+            "name": "Sortie de source OLE DB",
+            "startId": "Package\\alim_dim_client\\DIM_Client.Outputs[Sortie de source OLE DB]"
+          },
+          {
+            "refId": "Package\\alim_dim_client.Paths[Sortie de source OLE DB]",
+            "endId": "Package\\alim_dim_client\\Trier.Inputs[Entrée de tri]",
+            "name": "Sortie de source OLE DB",
+            "startId": "Package\\alim_dim_client\\SA_Client.Outputs[Sortie de source OLE DB]"
+          },
+          {
+            "refId": "Package\\alim_dim_client.Paths[Sortie de tri1]",
+            "endId": "Package\\alim_dim_client\\Jointure de fusion.Inputs[Entrée droite de jointure de fusion]",
+            "name": "Sortie de tri",
+            "startId": "Package\\alim_dim_client\\Trier 1.Outputs[Sortie de tri]"
+          },
+          {
+            "refId": "Package\\alim_dim_client.Paths[Sortie de tri]",
+            "endId": "Package\\alim_dim_client\\Jointure de fusion.Inputs[Entrée gauche de jointure de fusion]",
+            "name": "Sortie de tri",
+            "startId": "Package\\alim_dim_client\\Trier.Outputs[Sortie de tri]"
+          },
+          {
+            "refId": "Package\\alim_dim_client.Paths[UPDATE]",
+            "endId": "Package\\alim_dim_client\\Commande OLE DB.Inputs[Entrée de commande OLE DB]",
+            "name": "UPDATE",
+            "startId": "Package\\alim_dim_client\\Fractionnement conditionnel.Outputs[UPDATE]"
+          }
+        ]
+      },
+      {
+        "name": "alim_dim_fournisseur",
+        "ref": "Package\\alim_dim_fournisseur",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\alim_dim_fournisseur\\Commande OLE DB",
+            "name": "Commande OLE DB",
+            "type": "Microsoft.OLEDBCommand",
+            "properties": {
+              "CommandTimeout": "0",
+              "SqlCommand": "UPDATE [dbo].[dim_fournisseur]\nSET [Nom] = ?\nWHERE [Fournisseur_Id] = ?",
+              "DefaultCodePage": "1252"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_fournisseur\\DST_dim_fournisseur",
+            "name": "DST_dim_fournisseur",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[dim_fournisseur]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_fournisseur\\Fractionnement conditionnel",
+            "name": "Fractionnement conditionnel",
+            "type": "Microsoft.ConditionalSplit",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_dim_fournisseur\\Lookup_fournisseur",
+            "name": "Lookup_fournisseur",
+            "type": "Microsoft.Lookup",
+            "properties": {
+              "SqlCommand": "select * from [dbo].[dim_fournisseur]",
+              "SqlCommandParam": "select * from (select * from [dbo].[dim_fournisseur]) [refTable]\nwhere [refTable].[Fournisseur_Id] = ?",
+              "ConnectionType": "0",
+              "CacheType": "0",
+              "NoMatchBehavior": "1",
+              "NoMatchCachePercentage": "0",
+              "MaxMemoryUsage": "25",
+              "MaxMemoryUsage64": "25",
+              "ReferenceMetadataXml": "<referenceMetadata><referenceColumns><referenceColumn name=\"Fournisseur_Id\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"Nom\" dataType=\"DT_WSTR\" length=\"200\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>",
+              "ParameterMap": "#{Package\\alim_dim_fournisseur\\SA_Fournisseur.Outputs[Sortie de source OLE DB].Columns[Fournisseur_Id]};",
+              "DefaultCodePage": "1252",
+              "TreatDuplicateKeysAsError": "false"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_fournisseur\\SA_Fournisseur",
+            "name": "SA_Fournisseur",
+            "type": "Microsoft.OLEDBSource",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": null,
+              "OpenRowsetVariable": null,
+              "SqlCommand": "WITH ids AS (\n    SELECT TRY_CAST(c.Id AS INT) AS Fournisseur_Id\n    FROM CompaniesList_SA c\n    WHERE LTRIM(RTRIM(c.CompanyType_Id)) = '2'\n    UNION\n    SELECT TRY_CAST(t.Company_Id AS INT)\n    FROM Documents_SA d\n    JOIN Transactions_SA t ON t.Id = d.Transaction_Id\n    WHERE d.State = '1' AND d.DocumentType_Id IN ('20','23')\n      AND NULLIF(LTRIM(RTRIM(t.Company_Id)), '') IS NOT NULL\n)\nSELECT i.Fournisseur_Id,\n       CAST(COALESCE(\n            dbo.fn_reparer_accents(\n  CASE WHEN f.Nom LIKE '[0-9]%. %'\n       THEN LTRIM(RTRIM(SUBSTRING(f.Nom, CHARINDEX('. ', f.Nom) + 2, 200)))\n       ELSE LTRIM(RTRIM(f.Nom)) END),\n            LTRIM(RTRIM(REPLACE(c.Name, '|', ''))),\n            N'FOURNISSEUR INCONNU ' + CAST(i.Fournisseur_Id AS NVARCHAR(10))\n       ) AS NVARCHAR(200)) AS Nom\nFROM ids i\nLEFT JOIN CompaniesList_SA c ON TRY_CAST(c.Id AS INT) = i.Fournisseur_Id\nLEFT JOIN Fournisseurs_SA   f ON LTRIM(RTRIM(f.Code)) = LTRIM(RTRIM(c.Code))\nWHERE i.Fournisseur_Id IS NOT NULL\nUNION ALL\nSELECT -1, N'NON RENSEIGNE';",
+              "SqlCommandVariable": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "2",
+              "ParameterMapping": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\alim_dim_fournisseur.Paths[Sortie de recherche avec correspondance]",
+            "endId": "Package\\alim_dim_fournisseur\\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]",
+            "name": "Sortie de recherche avec correspondance",
+            "startId": "Package\\alim_dim_fournisseur\\Lookup_fournisseur.Outputs[Sortie de recherche avec correspondance]"
+          },
+          {
+            "refId": "Package\\alim_dim_fournisseur.Paths[Sortie de recherche sans correspondance]",
+            "endId": "Package\\alim_dim_fournisseur\\DST_dim_fournisseur.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de recherche sans correspondance",
+            "startId": "Package\\alim_dim_fournisseur\\Lookup_fournisseur.Outputs[Sortie de recherche sans correspondance]"
+          },
+          {
+            "refId": "Package\\alim_dim_fournisseur.Paths[Sortie de source OLE DB]",
+            "endId": "Package\\alim_dim_fournisseur\\Lookup_fournisseur.Inputs[Entrée de recherche]",
+            "name": "Sortie de source OLE DB",
+            "startId": "Package\\alim_dim_fournisseur\\SA_Fournisseur.Outputs[Sortie de source OLE DB]"
+          },
+          {
+            "refId": "Package\\alim_dim_fournisseur.Paths[UPDATE]",
+            "endId": "Package\\alim_dim_fournisseur\\Commande OLE DB.Inputs[Entrée de commande OLE DB]",
+            "name": "UPDATE",
+            "startId": "Package\\alim_dim_fournisseur\\Fractionnement conditionnel.Outputs[UPDATE]"
+          }
+        ]
+      },
+      {
+        "name": "alim_dim_paiement",
+        "ref": "Package\\alim_dim_paiement",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\alim_dim_paiement\\Commande OLE DB",
+            "name": "Commande OLE DB",
+            "type": "Microsoft.OLEDBCommand",
+            "properties": {
+              "CommandTimeout": "0",
+              "SqlCommand": "UPDATE [dbo].[dim_paiement]\nSET [PaymentModeName] = ?\nWHERE [PaymentMode_Id] = ?",
+              "DefaultCodePage": "1252"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_paiement\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[dim_paiement]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "true",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_paiement\\Fractionnement conditionnel",
+            "name": "Fractionnement conditionnel",
+            "type": "Microsoft.ConditionalSplit",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_dim_paiement\\Recherche",
+            "name": "Recherche",
+            "type": "Microsoft.Lookup",
+            "properties": {
+              "SqlCommand": "select * from [dbo].[dim_paiement]",
+              "SqlCommandParam": "select * from (select * from [dbo].[dim_paiement]) [refTable]\nwhere [refTable].[PaymentMode_Id] = ?",
+              "ConnectionType": "0",
+              "CacheType": "0",
+              "NoMatchBehavior": "1",
+              "NoMatchCachePercentage": "0",
+              "MaxMemoryUsage": "25",
+              "MaxMemoryUsage64": "25",
+              "ReferenceMetadataXml": "<referenceMetadata><referenceColumns><referenceColumn name=\"PaymentMode_Id\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"PaymentModeName\" dataType=\"DT_WSTR\" length=\"50\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>",
+              "ParameterMap": "#{Package\\alim_dim_paiement\\SA_Paiement.Outputs[Sortie de source OLE DB].Columns[PaymentMode_Id]};",
+              "DefaultCodePage": "1252",
+              "TreatDuplicateKeysAsError": "false"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_paiement\\SA_Paiement",
+            "name": "SA_Paiement",
+            "type": "Microsoft.OLEDBSource",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": null,
+              "OpenRowsetVariable": null,
+              "SqlCommand": "SELECT DISTINCT\n       TRY_CAST(LTRIM(RTRIM(PaymentMode_Id)) AS INT) AS PaymentMode_Id,\n       CASE LTRIM(RTRIM(PaymentMethodName))\n            WHEN 'Core.PaymentMode.Cheque'       THEN N'Chèque'\n            WHEN 'Core.PaymentMode.Cash.Tunisia' THEN N'Espèces'\n            WHEN 'Core.PaymentMode.BankCard'     THEN N'Carte bancaire'\n            WHEN 'Core.PaymentMode.Credit'       THEN N'Crédit (paiement différé)'\n            WHEN 'Core.PaymentMode.Jetons'       THEN N'Jetons'\n            ELSE LTRIM(RTRIM(PaymentMethodName)) END AS PaymentModeName\nFROM PaymentsList_SA\nWHERE NULLIF(LTRIM(RTRIM(PaymentMode_Id)), '') IS NOT NULL\nUNION\nSELECT -1, N'Non renseigné';",
+              "SqlCommandVariable": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "2",
+              "ParameterMapping": null
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\alim_dim_paiement.Paths[Sortie de recherche avec correspondance]",
+            "endId": "Package\\alim_dim_paiement\\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]",
+            "name": "Sortie de recherche avec correspondance",
+            "startId": "Package\\alim_dim_paiement\\Recherche.Outputs[Sortie de recherche avec correspondance]"
+          },
+          {
+            "refId": "Package\\alim_dim_paiement.Paths[Sortie de recherche sans correspondance]",
+            "endId": "Package\\alim_dim_paiement\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "Sortie de recherche sans correspondance",
+            "startId": "Package\\alim_dim_paiement\\Recherche.Outputs[Sortie de recherche sans correspondance]"
+          },
+          {
+            "refId": "Package\\alim_dim_paiement.Paths[Sortie de source OLE DB]",
+            "endId": "Package\\alim_dim_paiement\\Recherche.Inputs[Entrée de recherche]",
+            "name": "Sortie de source OLE DB",
+            "startId": "Package\\alim_dim_paiement\\SA_Paiement.Outputs[Sortie de source OLE DB]"
+          },
+          {
+            "refId": "Package\\alim_dim_paiement.Paths[UPDATE]",
+            "endId": "Package\\alim_dim_paiement\\Commande OLE DB.Inputs[Entrée de commande OLE DB]",
+            "name": "UPDATE",
+            "startId": "Package\\alim_dim_paiement\\Fractionnement conditionnel.Outputs[UPDATE]"
+          }
+        ]
+      },
+      {
+        "name": "alim_dim_produit",
+        "ref": "Package\\alim_dim_produit",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\alim_dim_produit\\Commande OLE DB",
+            "name": "Commande OLE DB",
+            "type": "Microsoft.OLEDBCommand",
+            "properties": {
+              "CommandTimeout": "0",
+              "SqlCommand": "UPDATE [dbo].[dim_produit]\nSET [Libelle] = ?, [Famille] = ?, [Marque] = ?\nWHERE [Product_Id] = ?",
+              "DefaultCodePage": "1252"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_produit\\Destination OLE DB",
+            "name": "Destination OLE DB",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[dim_produit]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_produit\\DIM_Produit",
+            "name": "DIM_Produit",
+            "type": "Microsoft.OLEDBSource",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "[dbo].[dim_produit]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "SqlCommandVariable": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "0",
+              "ParameterMapping": null
+            }
+          },
+          {
+            "id": "Package\\alim_dim_produit\\Fractionnement conditionnel",
+            "name": "Fractionnement conditionnel",
+            "type": "Microsoft.ConditionalSplit",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_dim_produit\\Jointure de fusion",
+            "name": "Jointure de fusion",
+            "type": "Microsoft.MergeJoin",
+            "properties": {
+              "JoinType": "1",
+              "NumKeyColumns": "1",
+              "TreatNullsAsEqual": "true",
+              "MaxBuffersPerInput": "5"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_produit\\SA_Produits",
+            "name": "SA_Produits",
+            "type": "Microsoft.OLEDBSource",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": null,
+              "OpenRowsetVariable": null,
+              "SqlCommand": "EXEC dbo.usp_source_dim_produit\nWITH RESULT SETS ((Product_Id INT, Libelle NVARCHAR(255),\n                   Famille NVARCHAR(100), Marque NVARCHAR(100)));",
+              "SqlCommandVariable": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "2",
+              "ParameterMapping": null
+            }
+          },
+          {
+            "id": "Package\\alim_dim_produit\\Trier",
+            "name": "Trier",
+            "type": "Microsoft.Sort",
+            "properties": {
+              "EliminateDuplicates": "false",
+              "MaximumThreads": "-1"
+            }
+          },
+          {
+            "id": "Package\\alim_dim_produit\\Trier 1",
+            "name": "Trier 1",
+            "type": "Microsoft.Sort",
+            "properties": {
+              "EliminateDuplicates": "false",
+              "MaximumThreads": "-1"
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\alim_dim_produit.Paths[INSERT]",
+            "endId": "Package\\alim_dim_produit\\Destination OLE DB.Inputs[Entrée de destination OLE DB]",
+            "name": "INSERT",
+            "startId": "Package\\alim_dim_produit\\Fractionnement conditionnel.Outputs[INSERT]"
+          },
+          {
+            "refId": "Package\\alim_dim_produit.Paths[Sortie de jointure de fusion]",
+            "endId": "Package\\alim_dim_produit\\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]",
+            "name": "Sortie de jointure de fusion",
+            "startId": "Package\\alim_dim_produit\\Jointure de fusion.Outputs[Sortie de jointure de fusion]"
+          },
+          {
+            "refId": "Package\\alim_dim_produit.Paths[Sortie de source OLE DB1]",
+            "endId": "Package\\alim_dim_produit\\Trier 1.Inputs[Entrée de tri]",
+            "name": "Sortie de source OLE DB",
+            "startId": "Package\\alim_dim_produit\\DIM_Produit.Outputs[Sortie de source OLE DB]"
+          },
+          {
+            "refId": "Package\\alim_dim_produit.Paths[Sortie de source OLE DB]",
+            "endId": "Package\\alim_dim_produit\\Trier.Inputs[Entrée de tri]",
+            "name": "Sortie de source OLE DB",
+            "startId": "Package\\alim_dim_produit\\SA_Produits.Outputs[Sortie de source OLE DB]"
+          },
+          {
+            "refId": "Package\\alim_dim_produit.Paths[Sortie de tri1]",
+            "endId": "Package\\alim_dim_produit\\Jointure de fusion.Inputs[Entrée droite de jointure de fusion]",
+            "name": "Sortie de tri",
+            "startId": "Package\\alim_dim_produit\\Trier 1.Outputs[Sortie de tri]"
+          },
+          {
+            "refId": "Package\\alim_dim_produit.Paths[Sortie de tri]",
+            "endId": "Package\\alim_dim_produit\\Jointure de fusion.Inputs[Entrée gauche de jointure de fusion]",
+            "name": "Sortie de tri",
+            "startId": "Package\\alim_dim_produit\\Trier.Outputs[Sortie de tri]"
+          },
+          {
+            "refId": "Package\\alim_dim_produit.Paths[UPDATE]",
+            "endId": "Package\\alim_dim_produit\\Commande OLE DB.Inputs[Entrée de commande OLE DB]",
+            "name": "UPDATE",
+            "startId": "Package\\alim_dim_produit\\Fractionnement conditionnel.Outputs[UPDATE]"
+          }
+        ]
+      },
+      {
+        "name": "alim_fait_achats",
+        "ref": "Package\\alim_fait_achats",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\alim_fait_achats\\Colonne derivee - motif de selection",
+            "name": "Colonne derivee - motif de selection",
+            "type": "Microsoft.DerivedColumn",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_fait_achats\\Colonnes derivees - date et montant HT net",
+            "name": "Colonnes derivees - date et montant HT net",
+            "type": "Microsoft.DerivedColumn",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_fait_achats\\Fractionnement conditionnel - factures valides",
+            "name": "Fractionnement conditionnel - factures valides",
+            "type": "Microsoft.ConditionalSplit",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_fait_achats\\Fractionnement conditionnel - valeurs modifiees",
+            "name": "Fractionnement conditionnel - valeurs modifiees",
+            "type": "Microsoft.ConditionalSplit",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_fait_achats\\INSERT - fait_achats",
+            "name": "INSERT - fait_achats",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "dbo.[fait_achats]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_achats\\Recherche dim_fournisseur",
+            "name": "Recherche dim_fournisseur",
+            "type": "Microsoft.Lookup",
+            "properties": {
+              "SqlCommand": "SELECT [Fournisseur_Id] AS RefKey FROM dbo.[dim_fournisseur]",
+              "SqlCommandParam": null,
+              "ConnectionType": "0",
+              "CacheType": "0",
+              "NoMatchBehavior": "0",
+              "NoMatchCachePercentage": "0",
+              "MaxMemoryUsage": "25",
+              "MaxMemoryUsage64": "25",
+              "ReferenceMetadataXml": "<referenceMetadata><referenceColumns><referenceColumn name=\"RefKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>",
+              "ParameterMap": null,
+              "DefaultCodePage": "1252",
+              "TreatDuplicateKeysAsError": "true"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_achats\\Recherche dim_produit",
+            "name": "Recherche dim_produit",
+            "type": "Microsoft.Lookup",
+            "properties": {
+              "SqlCommand": "SELECT [Product_Id] AS RefKey FROM dbo.[dim_produit]",
+              "SqlCommandParam": null,
+              "ConnectionType": "0",
+              "CacheType": "0",
+              "NoMatchBehavior": "0",
+              "NoMatchCachePercentage": "0",
+              "MaxMemoryUsage": "25",
+              "MaxMemoryUsage64": "25",
+              "ReferenceMetadataXml": "<referenceMetadata><referenceColumns><referenceColumn name=\"RefKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>",
+              "ParameterMap": null,
+              "DefaultCodePage": "1252",
+              "TreatDuplicateKeysAsError": "true"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_achats\\Recherche dim_temps",
+            "name": "Recherche dim_temps",
+            "type": "Microsoft.Lookup",
+            "properties": {
+              "SqlCommand": "SELECT [DateKey] AS RefKey FROM dbo.[dim_temps]",
+              "SqlCommandParam": null,
+              "ConnectionType": "0",
+              "CacheType": "0",
+              "NoMatchBehavior": "0",
+              "NoMatchCachePercentage": "0",
+              "MaxMemoryUsage": "25",
+              "MaxMemoryUsage64": "25",
+              "ReferenceMetadataXml": "<referenceMetadata><referenceColumns><referenceColumn name=\"RefKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>",
+              "ParameterMap": null,
+              "DefaultCodePage": "1252",
+              "TreatDuplicateKeysAsError": "true"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_achats\\Recherche du fait existant",
+            "name": "Recherche du fait existant",
+            "type": "Microsoft.Lookup",
+            "properties": {
+              "SqlCommand": "SELECT [Id] AS OldKey,[Document_Id] AS [Old_Document_Id],[DateKey] AS [Old_DateKey],[Product_Id] AS [Old_Product_Id],[Fournisseur_Id] AS [Old_Fournisseur_Id],[QuantiteAchetee] AS [Old_QuantiteAchetee],[MontantAchat_HT] AS [Old_MontantAchat_HT] FROM dbo.[fait_achats]",
+              "SqlCommandParam": null,
+              "ConnectionType": "0",
+              "CacheType": "0",
+              "NoMatchBehavior": "1",
+              "NoMatchCachePercentage": "0",
+              "MaxMemoryUsage": "25",
+              "MaxMemoryUsage64": "25",
+              "ReferenceMetadataXml": "<referenceMetadata><referenceColumns><referenceColumn name=\"OldKey\" dataType=\"DT_I8\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"Old_Document_Id\" dataType=\"DT_I8\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"Old_DateKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"Old_Product_Id\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"Old_Fournisseur_Id\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"Old_QuantiteAchetee\" dataType=\"DT_NUMERIC\" length=\"0\" precision=\"18\" scale=\"4\" codePage=\"0\"/><referenceColumn name=\"Old_MontantAchat_HT\" dataType=\"DT_NUMERIC\" length=\"0\" precision=\"18\" scale=\"4\" codePage=\"0\"/></referenceColumns></referenceMetadata>",
+              "ParameterMap": null,
+              "DefaultCodePage": "1252",
+              "TreatDuplicateKeysAsError": "true"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_achats\\SA - conserver les lignes exclues",
+            "name": "SA - conserver les lignes exclues",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "dbo.Rejets_Faits",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_achats\\SA - lignes factures et fournisseurs",
+            "name": "SA - lignes factures et fournisseurs",
+            "type": "Microsoft.OLEDBSource",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": null,
+              "OpenRowsetVariable": null,
+              "SqlCommand": "SELECT * FROM dbo.v_source_achats",
+              "SqlCommandVariable": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "2",
+              "ParameterMapping": null
+            }
+          },
+          {
+            "id": "Package\\alim_fait_achats\\UPDATE - fait_achats",
+            "name": "UPDATE - fait_achats",
+            "type": "Microsoft.OLEDBCommand",
+            "properties": {
+              "CommandTimeout": "0",
+              "SqlCommand": "UPDATE dbo.[fait_achats] SET [Document_Id]=?,[DateKey]=?,[Product_Id]=?,[Fournisseur_Id]=?,[QuantiteAchetee]=?,[MontantAchat_HT]=? WHERE [Id]=?",
+              "DefaultCodePage": "1252"
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\alim_fait_achats.Paths[BROUILLONS OU COMMENTAIRES]",
+            "endId": "Package\\alim_fait_achats\\SA - conserver les lignes exclues.Inputs[OLE DB Destination Input]",
+            "name": "BROUILLONS OU COMMENTAIRES",
+            "startId": "Package\\alim_fait_achats\\Fractionnement conditionnel - factures valides.Outputs[BROUILLONS OU COMMENTAIRES]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[Derived Column Output1]",
+            "endId": "Package\\alim_fait_achats\\Recherche dim_temps.Inputs[Lookup Input]",
+            "name": "Derived Column Output",
+            "startId": "Package\\alim_fait_achats\\Colonnes derivees - date et montant HT net.Outputs[Derived Column Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[Derived Column Output]",
+            "endId": "Package\\alim_fait_achats\\Fractionnement conditionnel - factures valides.Inputs[Conditional Split Input]",
+            "name": "Derived Column Output",
+            "startId": "Package\\alim_fait_achats\\Colonne derivee - motif de selection.Outputs[Derived Column Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[FACTURES VALIDEES]",
+            "endId": "Package\\alim_fait_achats\\Colonnes derivees - date et montant HT net.Inputs[Derived Column Input]",
+            "name": "FACTURES VALIDEES",
+            "startId": "Package\\alim_fait_achats\\Fractionnement conditionnel - factures valides.Outputs[FACTURES VALIDEES]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[Lookup Match Output1]",
+            "endId": "Package\\alim_fait_achats\\Recherche dim_fournisseur.Inputs[Lookup Input]",
+            "name": "Lookup Match Output",
+            "startId": "Package\\alim_fait_achats\\Recherche dim_produit.Outputs[Lookup Match Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[Lookup Match Output2]",
+            "endId": "Package\\alim_fait_achats\\Recherche du fait existant.Inputs[Lookup Input]",
+            "name": "Lookup Match Output",
+            "startId": "Package\\alim_fait_achats\\Recherche dim_fournisseur.Outputs[Lookup Match Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[Lookup Match Output]",
+            "endId": "Package\\alim_fait_achats\\Recherche dim_produit.Inputs[Lookup Input]",
+            "name": "Lookup Match Output",
+            "startId": "Package\\alim_fait_achats\\Recherche dim_temps.Outputs[Lookup Match Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[Lookup Match Output3]",
+            "endId": "Package\\alim_fait_achats\\Fractionnement conditionnel - valeurs modifiees.Inputs[Conditional Split Input]",
+            "name": "Lookup Match Output",
+            "startId": "Package\\alim_fait_achats\\Recherche du fait existant.Outputs[Lookup Match Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[Lookup No Match Output]",
+            "endId": "Package\\alim_fait_achats\\INSERT - fait_achats.Inputs[OLE DB Destination Input]",
+            "name": "Lookup No Match Output",
+            "startId": "Package\\alim_fait_achats\\Recherche du fait existant.Outputs[Lookup No Match Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[OLE DB Source Output]",
+            "endId": "Package\\alim_fait_achats\\Colonne derivee - motif de selection.Inputs[Derived Column Input]",
+            "name": "OLE DB Source Output",
+            "startId": "Package\\alim_fait_achats\\SA - lignes factures et fournisseurs.Outputs[OLE DB Source Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_achats.Paths[UPDATE]",
+            "endId": "Package\\alim_fait_achats\\UPDATE - fait_achats.Inputs[OLE DB Command Input]",
+            "name": "UPDATE",
+            "startId": "Package\\alim_fait_achats\\Fractionnement conditionnel - valeurs modifiees.Outputs[UPDATE]"
+          }
+        ]
+      },
+      {
+        "name": "alim_fait_stock_actuel",
+        "ref": "Package\\alim_fait_stock_actuel",
+        "type": "Microsoft.Pipeline",
+        "components": [
+          {
+            "id": "Package\\alim_fait_stock_actuel\\Colonne derivee - date inconnue et alerte",
+            "name": "Colonne derivee - date inconnue et alerte",
+            "type": "Microsoft.DerivedColumn",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_fait_stock_actuel\\Fractionnement conditionnel - valeurs modifiees",
+            "name": "Fractionnement conditionnel - valeurs modifiees",
+            "type": "Microsoft.ConditionalSplit",
+            "properties": {}
+          },
+          {
+            "id": "Package\\alim_fait_stock_actuel\\INSERT - fait_stock_actuel",
+            "name": "INSERT - fait_stock_actuel",
+            "type": "Microsoft.OLEDBDestination",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": "dbo.[fait_stock_actuel]",
+              "OpenRowsetVariable": null,
+              "SqlCommand": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "3",
+              "FastLoadKeepIdentity": "false",
+              "FastLoadKeepNulls": "false",
+              "FastLoadOptions": "TABLOCK,CHECK_CONSTRAINTS",
+              "FastLoadMaxInsertCommitSize": "2147483647"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_stock_actuel\\Recherche dim_produit",
+            "name": "Recherche dim_produit",
+            "type": "Microsoft.Lookup",
+            "properties": {
+              "SqlCommand": "SELECT [Product_Id] AS RefKey FROM dbo.[dim_produit]",
+              "SqlCommandParam": null,
+              "ConnectionType": "0",
+              "CacheType": "0",
+              "NoMatchBehavior": "0",
+              "NoMatchCachePercentage": "0",
+              "MaxMemoryUsage": "25",
+              "MaxMemoryUsage64": "25",
+              "ReferenceMetadataXml": "<referenceMetadata><referenceColumns><referenceColumn name=\"RefKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>",
+              "ParameterMap": null,
+              "DefaultCodePage": "1252",
+              "TreatDuplicateKeysAsError": "true"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_stock_actuel\\Recherche du fait existant",
+            "name": "Recherche du fait existant",
+            "type": "Microsoft.Lookup",
+            "properties": {
+              "SqlCommand": "SELECT [Product_Id] AS OldKey,[DateKey] AS [Old_DateKey],[QuantiteActuelle] AS [Old_QuantiteActuelle],[QuantiteAlerte] AS [Old_QuantiteAlerte],[EstSousSeuil] AS [Old_EstSousSeuil] FROM dbo.[fait_stock_actuel]",
+              "SqlCommandParam": null,
+              "ConnectionType": "0",
+              "CacheType": "0",
+              "NoMatchBehavior": "1",
+              "NoMatchCachePercentage": "0",
+              "MaxMemoryUsage": "25",
+              "MaxMemoryUsage64": "25",
+              "ReferenceMetadataXml": "<referenceMetadata><referenceColumns><referenceColumn name=\"OldKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"Old_DateKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"Old_QuantiteActuelle\" dataType=\"DT_NUMERIC\" length=\"0\" precision=\"18\" scale=\"4\" codePage=\"0\"/><referenceColumn name=\"Old_QuantiteAlerte\" dataType=\"DT_NUMERIC\" length=\"0\" precision=\"18\" scale=\"4\" codePage=\"0\"/><referenceColumn name=\"Old_EstSousSeuil\" dataType=\"DT_BOOL\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>",
+              "ParameterMap": null,
+              "DefaultCodePage": "1252",
+              "TreatDuplicateKeysAsError": "true"
+            }
+          },
+          {
+            "id": "Package\\alim_fait_stock_actuel\\SA - quantites et seuils par produit",
+            "name": "SA - quantites et seuils par produit",
+            "type": "Microsoft.OLEDBSource",
+            "properties": {
+              "CommandTimeout": "0",
+              "OpenRowset": null,
+              "OpenRowsetVariable": null,
+              "SqlCommand": "SELECT Product_Id,QuantiteActuelle,QuantiteAlerte FROM dbo.v_source_stock",
+              "SqlCommandVariable": null,
+              "DefaultCodePage": "1252",
+              "AlwaysUseDefaultCodePage": "false",
+              "AccessMode": "2",
+              "ParameterMapping": null
+            }
+          },
+          {
+            "id": "Package\\alim_fait_stock_actuel\\UPDATE - fait_stock_actuel",
+            "name": "UPDATE - fait_stock_actuel",
+            "type": "Microsoft.OLEDBCommand",
+            "properties": {
+              "CommandTimeout": "0",
+              "SqlCommand": "UPDATE dbo.[fait_stock_actuel] SET [DateKey]=?,[QuantiteActuelle]=?,[QuantiteAlerte]=?,[EstSousSeuil]=? WHERE [Product_Id]=?",
+              "DefaultCodePage": "1252"
+            }
+          }
+        ],
+        "paths": [
+          {
+            "refId": "Package\\alim_fait_stock_actuel.Paths[Derived Column Output]",
+            "endId": "Package\\alim_fait_stock_actuel\\Recherche dim_produit.Inputs[Lookup Input]",
+            "name": "Derived Column Output",
+            "startId": "Package\\alim_fait_stock_actuel\\Colonne derivee - date inconnue et alerte.Outputs[Derived Column Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_stock_actuel.Paths[Lookup Match Output1]",
+            "endId": "Package\\alim_fait_stock_actuel\\Fractionnement conditionnel - valeurs modifiees.Inputs[Conditional Split Input]",
+            "name": "Lookup Match Output",
+            "startId": "Package\\alim_fait_stock_actuel\\Recherche du fait existant.Outputs[Lookup Match Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_stock_actuel.Paths[Lookup Match Output]",
+            "endId": "Package\\alim_fait_stock_actuel\\Recherche du fait existant.Inputs[Lookup Input]",
+            "name": "Lookup Match Output",
+            "startId": "Package\\alim_fait_stock_actuel\\Recherche dim_produit.Outputs[Lookup Match Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_stock_actuel.Paths[Lookup No Match Output]",
+            "endId": "Package\\alim_fait_stock_actuel\\INSERT - fait_stock_actuel.Inputs[OLE DB Destination Input]",
+            "name": "Lookup No Match Output",
+            "startId": "Package\\alim_fait_stock_actuel\\Recherche du fait existant.Outputs[Lookup No Match Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_stock_actuel.Paths[OLE DB Source Output]",
+            "endId": "Package\\alim_fait_stock_actuel\\Colonne derivee - date inconnue et alerte.Inputs[Derived Column Input]",
+            "name": "OLE DB Source Output",
+            "startId": "Package\\alim_fait_stock_actuel\\SA - quantites et seuils par produit.Outputs[OLE DB Source Output]"
+          },
+          {
+            "refId": "Package\\alim_fait_stock_actuel.Paths[UPDATE]",
+            "endId": "Package\\alim_fait_stock_actuel\\UPDATE - fait_stock_actuel.Inputs[OLE DB Command Input]",
+            "name": "UPDATE",
+            "startId": "Package\\alim_fait_stock_actuel\\Fractionnement conditionnel - valeurs modifiees.Outputs[UPDATE]"
+          }
+        ]
+      },
+      {
+        "name": "Preparation des deux faits",
+        "ref": "Package\\Preparation des deux faits",
+        "type": "Microsoft.ExecuteSQLTask",
+        "components": [],
+        "paths": []
+      }
+    ],
+    "constraints": [
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[{01F0594B-D8C1-43DB-91C0-24DA8713FA23\\}]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{01F0594B-D8C1-43DB-91C0-24DA8713FA23}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\alim_dim_client",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "{01F0594B-D8C1-43DB-91C0-24DA8713FA23}",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Preparation des deux faits"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[{05C96F7D-F121-427F-83BA-0A0F347F4C72\\}]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{05C96F7D-F121-427F-83BA-0A0F347F4C72}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\alim_fait_stock_actuel",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "{05C96F7D-F121-427F-83BA-0A0F347F4C72}",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\alim_fait_achats"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[{657168C6-F037-47D3-8D3A-C58836C1E67D\\}]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{657168C6-F037-47D3-8D3A-C58836C1E67D}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\alim_dim_paiement",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "{657168C6-F037-47D3-8D3A-C58836C1E67D}",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Preparation des deux faits"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[{A2DEBCB4-3823-45D4-B7D7-9F90DE7F907B\\}]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{A2DEBCB4-3823-45D4-B7D7-9F90DE7F907B}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\alim_dim_produit",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "{A2DEBCB4-3823-45D4-B7D7-9F90DE7F907B}",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Preparation des deux faits"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[{B5712A1D-1FFC-4552-9996-6214ACBC15EC\\}]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{B5712A1D-1FFC-4552-9996-6214ACBC15EC}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\alim_dim_fournisseur",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "{B5712A1D-1FFC-4552-9996-6214ACBC15EC}",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Preparation des deux faits"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[{B6B72D09-E4EB-4BCC-B728-274052E651EE\\}]",
+        "{www.microsoft.com/SqlServer/Dts}CreationName": "",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{B6B72D09-E4EB-4BCC-B728-274052E651EE}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Preparation des deux faits",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "{B6B72D09-E4EB-4BCC-B728-274052E651EE}",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\alim_fait_stock_actuel"
+      }
+    ]
+  },
+  "Master.dtsx": {
+    "tasks": [
+      {
+        "name": "EL_SI_SA",
+        "ref": "Package\\EL_SI_SA",
+        "type": "Microsoft.ExecutePackageTask",
+        "components": [],
+        "paths": []
+      },
+      {
+        "name": "ETL_SA_DW",
+        "ref": "Package\\ETL_SA_DW",
+        "type": "Microsoft.ExecutePackageTask",
+        "components": [],
+        "paths": []
+      },
+      {
+        "name": "Calendrier",
+        "ref": "Package\\Calendrier",
+        "type": "Microsoft.ExecuteSQLTask",
+        "components": [],
+        "paths": []
+      },
+      {
+        "name": "Verification",
+        "ref": "Package\\Verification",
+        "type": "Microsoft.ExecuteSQLTask",
+        "components": [],
+        "paths": []
+      }
+    ],
+    "constraints": [
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Success0]",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{65683D13-E7F1-46A2-98E7-84F78DDF8AB3}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\EL_SI_SA",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Calendrier",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Success0"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Success1]",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{9D0F9501-A5EA-446E-AEDD-7D48F1C2D343}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\Calendrier",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\ETL_SA_DW",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Success1"
+      },
+      {
+        "{www.microsoft.com/SqlServer/Dts}refId": "Package.PrecedenceConstraints[Success2]",
+        "{www.microsoft.com/SqlServer/Dts}DTSID": "{0D3C6A26-9A53-4856-84DB-35884F8AC32C}",
+        "{www.microsoft.com/SqlServer/Dts}From": "Package\\ETL_SA_DW",
+        "{www.microsoft.com/SqlServer/Dts}To": "Package\\Verification",
+        "{www.microsoft.com/SqlServer/Dts}LogicalAnd": "True",
+        "{www.microsoft.com/SqlServer/Dts}ObjectName": "Success2"
+      }
+    ]
+  }
+}

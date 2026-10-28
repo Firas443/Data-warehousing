@@ -1,109 +1,18 @@
-﻿<?xml version="1.0"?>
-<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="PayementsList.csv"
-  DTS:DTSID="{7345A13D-C3C5-456B-8827-C619E1294E8F}"
-  DTS:CreationName="FLATFILE">
+<?xml version='1.0' encoding='utf-8'?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="PayementsList.csv" DTS:DTSID="{7345A13D-C3C5-456B-8827-C619E1294E8F}" DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
-    <DTS:ConnectionManager
-      DTS:Format="Delimited"
-      DTS:LocaleID="1036"
-      DTS:HeaderRowDelimiter="_x000D__x000A_"
-      DTS:ColumnNamesInFirstDataRow="True"
-      DTS:RowDelimiter=""
-      DTS:TextQualifier="_x0022_"
-      DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\amoul\OneDrive\Bureau\3AI\OneDrive_1_24-09-2026\PaymentsList.csv">
+    <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1036" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:ColumnNamesInFirstDataRow="True" DTS:RowDelimiter="" DTS:TextQualifier="_x0022_" DTS:CodePage="1252" DTS:ConnectionString="C:\Users\firas\OneDrive\Documents\ssis\HealthRetailers_DW_amal\data\transport\PayementsList.csv" DTS:Unicode="True">
       <DTS:FlatFileColumns>
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Id"
-          DTS:DTSID="{0CD2B00C-FAB2-48B6-A3F2-DE31EE150074}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="IsRemoved"
-          DTS:DTSID="{8CFCFEB6-3E26-4E19-900D-19F1690733A8}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Company_Id"
-          DTS:DTSID="{AD66252F-B368-494E-8E17-D176E8DBE593}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Amount"
-          DTS:DTSID="{0D3AACA7-6E8D-4F8A-806F-A709E3AE9522}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="PaymentDate"
-          DTS:DTSID="{62388320-14B6-4472-AD2F-F32E1599F6EB}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Reference"
-          DTS:DTSID="{4D0D4FAA-A99D-4351-A135-24EF7597DFBB}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Description"
-          DTS:DTSID="{4BCE81D6-DE9A-4AE8-A42F-7C0B3169A549}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="PaymentMode_Id"
-          DTS:DTSID="{6BF24DB1-C236-4FCD-8C8A-2594426E207C}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="PaymentMethodName"
-          DTS:DTSID="{BDAAAFE4-0156-4A11-ABE3-051F16816EAE}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x000D__x000A_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Extra"
-          DTS:DTSID="{087ECD14-407D-43C1-9A30-B9AD4327D167}"
-          DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Id" DTS:DTSID="{0CD2B00C-FAB2-48B6-A3F2-DE31EE150074}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="IsRemoved" DTS:DTSID="{8CFCFEB6-3E26-4E19-900D-19F1690733A8}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Company_Id" DTS:DTSID="{AD66252F-B368-494E-8E17-D176E8DBE593}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Amount" DTS:DTSID="{0D3AACA7-6E8D-4F8A-806F-A709E3AE9522}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="PaymentDate" DTS:DTSID="{62388320-14B6-4472-AD2F-F32E1599F6EB}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Reference" DTS:DTSID="{4D0D4FAA-A99D-4351-A135-24EF7597DFBB}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Description" DTS:DTSID="{4BCE81D6-DE9A-4AE8-A42F-7C0B3169A549}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="PaymentMode_Id" DTS:DTSID="{6BF24DB1-C236-4FCD-8C8A-2594426E207C}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="PaymentMethodName" DTS:DTSID="{BDAAAFE4-0156-4A11-ABE3-051F16816EAE}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Extra" DTS:DTSID="{087ECD14-407D-43C1-9A30-B9AD4327D167}" DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
   </DTS:ObjectData>

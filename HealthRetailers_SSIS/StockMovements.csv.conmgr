@@ -1,118 +1,19 @@
-﻿<?xml version="1.0"?>
-<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="StockMovements.csv"
-  DTS:DTSID="{E96241DF-E763-4736-A156-7B9A65FC45EF}"
-  DTS:CreationName="FLATFILE">
+<?xml version='1.0' encoding='utf-8'?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="StockMovements.csv" DTS:DTSID="{E96241DF-E763-4736-A156-7B9A65FC45EF}" DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
-    <DTS:ConnectionManager
-      DTS:Format="Delimited"
-      DTS:LocaleID="1036"
-      DTS:HeaderRowDelimiter="_x000D__x000A_"
-      DTS:ColumnNamesInFirstDataRow="True"
-      DTS:RowDelimiter=""
-      DTS:TextQualifier="_x0022_"
-      DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\amoul\OneDrive\Bureau\3AI\OneDrive_1_24-09-2026\StockMovements.csv">
+    <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1036" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:ColumnNamesInFirstDataRow="True" DTS:RowDelimiter="" DTS:TextQualifier="_x0022_" DTS:CodePage="1252" DTS:ConnectionString="C:\Users\firas\OneDrive\Documents\ssis\HealthRetailers_DW_amal\data\transport\StockMovements.csv" DTS:Unicode="True">
       <DTS:FlatFileColumns>
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Id"
-          DTS:DTSID="{260D9CCB-3AB1-4B58-AB46-2C76DD623E66}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="DocumentId"
-          DTS:DTSID="{2CCF9F08-C808-4C69-858C-5A62765B25ED}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="MovementDate"
-          DTS:DTSID="{8DC8B190-042F-4B9E-95EF-D9DF3FB8D0D9}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Quantity"
-          DTS:DTSID="{73943C98-6224-42CA-8086-F081598DA968}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="CurrentBalance"
-          DTS:DTSID="{3916DEE1-9A7F-4892-9A51-29B599F5F77C}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Description"
-          DTS:DTSID="{41C7FF3B-C541-426B-BCA7-088FDEF0E1CA}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="ProductStock_Id"
-          DTS:DTSID="{A497D85A-1948-4B9F-8D38-FCF61571E35D}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="User_Id"
-          DTS:DTSID="{361F5D59-FD5E-453C-A0A3-8B14DA951708}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Extra"
-          DTS:DTSID="{DBC4F633-D715-4250-B1BA-2785F5BE8F5F}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="ProductStockLocation_Id"
-          DTS:DTSID="{4710FDC0-8639-42BD-998A-4B8109B93452}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x000D__x000A_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="CurrentLocationBalance"
-          DTS:DTSID="{6C7D7036-46CB-4AA5-8B53-EF5CCF75DDF8}"
-          DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Id" DTS:DTSID="{260D9CCB-3AB1-4B58-AB46-2C76DD623E66}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="DocumentId" DTS:DTSID="{2CCF9F08-C808-4C69-858C-5A62765B25ED}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="MovementDate" DTS:DTSID="{8DC8B190-042F-4B9E-95EF-D9DF3FB8D0D9}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Quantity" DTS:DTSID="{73943C98-6224-42CA-8086-F081598DA968}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="CurrentBalance" DTS:DTSID="{3916DEE1-9A7F-4892-9A51-29B599F5F77C}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Description" DTS:DTSID="{41C7FF3B-C541-426B-BCA7-088FDEF0E1CA}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="ProductStock_Id" DTS:DTSID="{A497D85A-1948-4B9F-8D38-FCF61571E35D}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="User_Id" DTS:DTSID="{361F5D59-FD5E-453C-A0A3-8B14DA951708}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Extra" DTS:DTSID="{DBC4F633-D715-4250-B1BA-2785F5BE8F5F}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="ProductStockLocation_Id" DTS:DTSID="{4710FDC0-8639-42BD-998A-4B8109B93452}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="CurrentLocationBalance" DTS:DTSID="{6C7D7036-46CB-4AA5-8B53-EF5CCF75DDF8}" DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
   </DTS:ObjectData>

@@ -1,55 +1,12 @@
-﻿<?xml version="1.0"?>
-<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="RelatedDocuments.csv"
-  DTS:DTSID="{A40E7E25-DBF8-4C9B-BC4E-30C6FB374D90}"
-  DTS:CreationName="FLATFILE">
+<?xml version='1.0' encoding='utf-8'?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="RelatedDocuments.csv" DTS:DTSID="{A40E7E25-DBF8-4C9B-BC4E-30C6FB374D90}" DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
-    <DTS:ConnectionManager
-      DTS:Format="Delimited"
-      DTS:LocaleID="1036"
-      DTS:HeaderRowDelimiter="_x000D__x000A_"
-      DTS:ColumnNamesInFirstDataRow="True"
-      DTS:RowDelimiter=""
-      DTS:TextQualifier="_x0022_"
-      DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\amoul\OneDrive\Bureau\3AI\OneDrive_1_24-09-2026\RelatedDocuments.csv">
+    <DTS:ConnectionManager DTS:Format="Delimited" DTS:LocaleID="1036" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:ColumnNamesInFirstDataRow="True" DTS:RowDelimiter="" DTS:TextQualifier="_x0022_" DTS:CodePage="1252" DTS:ConnectionString="C:\Users\firas\OneDrive\Documents\ssis\HealthRetailers_DW_amal\data\transport\RelatedDocuments.csv" DTS:Unicode="True">
       <DTS:FlatFileColumns>
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Id"
-          DTS:DTSID="{D46F1A62-8DB4-4D71-8215-9A07EFE5A076}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Relation"
-          DTS:DTSID="{E021FD5C-77D4-4FB1-9ECF-1DFC6842B5C5}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x003B_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Document1_Id"
-          DTS:DTSID="{2A0DAD55-DACC-4FF7-8506-BB7458AF1E9E}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x000D__x000A_"
-          DTS:MaximumWidth="4000"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Document2_Id"
-          DTS:DTSID="{B36DFCB5-62E5-4AFC-AB8D-E290BD57F344}"
-          DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Id" DTS:DTSID="{D46F1A62-8DB4-4D71-8215-9A07EFE5A076}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Relation" DTS:DTSID="{E021FD5C-77D4-4FB1-9ECF-1DFC6842B5C5}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x003B_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Document1_Id" DTS:DTSID="{2A0DAD55-DACC-4FF7-8506-BB7458AF1E9E}" DTS:CreationName="" />
+        <DTS:FlatFileColumn DTS:ColumnType="Delimited" DTS:ColumnDelimiter="_x000D__x000A_" DTS:MaximumWidth="4000" DTS:DataType="130" DTS:TextQualified="True" DTS:ObjectName="Document2_Id" DTS:DTSID="{B36DFCB5-62E5-4AFC-AB8D-E290BD57F344}" DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
   </DTS:ObjectData>

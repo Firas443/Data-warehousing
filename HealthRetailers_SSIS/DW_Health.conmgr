@@ -1,12 +1,6 @@
-﻿<?xml version="1.0"?>
-<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Connexion de données3"
-  DTS:DTSID="{19232D52-F06A-430C-B463-ABB55696254A}"
-  DTS:CreationName="OLEDB">
+<?xml version='1.0' encoding='utf-8'?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="Connexion de données3" DTS:DTSID="{19232D52-F06A-430C-B463-ABB55696254A}" DTS:CreationName="OLEDB">
   <DTS:ObjectData>
-    <DTS:ConnectionManager
-      DTS:ConnectRetryCount="1"
-      DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Initial Catalog=DW_Health;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-HealthRetailers_SSIS-{19232D52-F06A-430C-B463-ABB55696254A}Connexion de données3;Auto Translate=False;" />
+    <DTS:ConnectionManager DTS:ConnectRetryCount="1" DTS:ConnectRetryInterval="5" DTS:ConnectionString="Data Source=localhost;Initial Catalog=DW_Health_Dimensions;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-HealthRetailers_SSIS-{19232D52-F06A-430C-B463-ABB55696254A}Connexion de données3;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

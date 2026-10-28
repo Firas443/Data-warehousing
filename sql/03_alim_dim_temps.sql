@@ -1,9 +1,9 @@
--- =====================================================================
+﻿-- =====================================================================
 -- Alimentation de dim_temps : du 30/09/2024 au 29/09/2026 (730 jours)
 -- Rejouable : n'ajoute que les dates absentes, ne supprime rien.
 -- A executer APRES 02_DW_Health.sql
 -- =====================================================================
-USE DW_Health;
+USE [$(WarehouseDatabase)];
 GO
 
 DECLARE @debut date = '2024-09-30', @fin date = '2026-09-29';

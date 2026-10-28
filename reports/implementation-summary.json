@@ -1,0 +1,22 @@
+﻿{
+  "checks": 67,
+  "failures": 0,
+  "originalDimensionDiagramsPreserved": true,
+  "nativeDataFlows": [
+    "alim_dim_client",
+    "alim_dim_fournisseur",
+    "alim_dim_paiement",
+    "alim_dim_produit",
+    "alim_fait_achats",
+    "alim_fait_stock_actuel"
+  ],
+  "warehouseCounts": {
+    "dim_fournisseur": 116,
+    "dim_client": 82,
+    "fait_achats": 6964,
+    "dim_produit": 6842,
+    "dim_temps": 730,
+    "fait_stock_actuel": 6842,
+    "dim_paiement": 6
+  }
+}

@@ -1,0 +1,337 @@
+﻿[
+    {
+        "Check":  "SSIS master.log",
+        "Passed":  true,
+        "Detail":  "DTExec exit 0"
+    },
+    {
+        "Check":  "Stage count Clients_SA",
+        "Passed":  true,
+        "Detail":  "93 rows"
+    },
+    {
+        "Check":  "Lossless Unicode Clients_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count CompaniesList_SA",
+        "Passed":  true,
+        "Detail":  "156 rows"
+    },
+    {
+        "Check":  "Lossless Unicode CompaniesList_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count DocumentItem_SA",
+        "Passed":  true,
+        "Detail":  "38705 rows"
+    },
+    {
+        "Check":  "Lossless Unicode DocumentItem_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count Documents_SA",
+        "Passed":  true,
+        "Detail":  "12542 rows"
+    },
+    {
+        "Check":  "Lossless Unicode Documents_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count DocumentTypes_SA",
+        "Passed":  true,
+        "Detail":  "15 rows"
+    },
+    {
+        "Check":  "Lossless Unicode DocumentTypes_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count Events_SA",
+        "Passed":  true,
+        "Detail":  "82585 rows"
+    },
+    {
+        "Check":  "Lossless Unicode Events_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count Fournisseurs_SA",
+        "Passed":  true,
+        "Detail":  "118 rows"
+    },
+    {
+        "Check":  "Lossless Unicode Fournisseurs_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count PaymentsList_SA",
+        "Passed":  true,
+        "Detail":  "10280 rows"
+    },
+    {
+        "Check":  "Lossless Unicode PaymentsList_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count Payment_SA",
+        "Passed":  true,
+        "Detail":  "10899 rows"
+    },
+    {
+        "Check":  "Lossless Unicode Payment_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count ProductBrands_SA",
+        "Passed":  true,
+        "Detail":  "212 rows"
+    },
+    {
+        "Check":  "Lossless Unicode ProductBrands_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count ProductStocks_SA",
+        "Passed":  true,
+        "Detail":  "6842 rows"
+    },
+    {
+        "Check":  "Lossless Unicode ProductStocks_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count Produits_SA",
+        "Passed":  true,
+        "Detail":  "7800 rows"
+    },
+    {
+        "Check":  "Lossless Unicode Produits_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count RelatedDocuments_SA",
+        "Passed":  true,
+        "Detail":  "864 rows"
+    },
+    {
+        "Check":  "Lossless Unicode RelatedDocuments_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count StockMovements_SA",
+        "Passed":  true,
+        "Detail":  "49609 rows"
+    },
+    {
+        "Check":  "Lossless Unicode StockMovements_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count TransactionPayments_SA",
+        "Passed":  true,
+        "Detail":  "10962 rows"
+    },
+    {
+        "Check":  "Lossless Unicode TransactionPayments_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count Transactions_SA",
+        "Passed":  true,
+        "Detail":  "12523 rows"
+    },
+    {
+        "Check":  "Lossless Unicode Transactions_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "Stage count UsersSettings_SA",
+        "Passed":  true,
+        "Detail":  "95 rows"
+    },
+    {
+        "Check":  "Lossless Unicode UsersSettings_SA",
+        "Passed":  true,
+        "Detail":  "All cells and duplicate rows reconciled with original source"
+    },
+    {
+        "Check":  "SSIS master-rerun.log",
+        "Passed":  true,
+        "Detail":  "DTExec exit 0"
+    },
+    {
+        "Check":  "Idempotency dim_client",
+        "Passed":  true,
+        "Detail":  "82 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "Idempotency dim_fournisseur",
+        "Passed":  true,
+        "Detail":  "116 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "Idempotency dim_produit",
+        "Passed":  true,
+        "Detail":  "6842 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "Idempotency dim_paiement",
+        "Passed":  true,
+        "Detail":  "6 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "Idempotency dim_temps",
+        "Passed":  true,
+        "Detail":  "730 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "Idempotency fait_stock_actuel",
+        "Passed":  true,
+        "Detail":  "6842 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "Idempotency fait_achats",
+        "Passed":  true,
+        "Detail":  "6964 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "SSIS dimension-null-and-update.log",
+        "Passed":  true,
+        "Detail":  "DTExec exit 0"
+    },
+    {
+        "Check":  "NULL/change repair dim_client",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "NULL/change repair dim_fournisseur",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "NULL/change repair dim_produit",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "NULL/change repair dim_paiement",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "NULL/change repair dim_temps",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "NULL/change repair fait_stock_actuel",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "NULL/change repair fait_achats",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "Stock NULL fixture has known threshold",
+        "Passed":  true,
+        "Detail":  "Product 312"
+    },
+    {
+        "Check":  "SSIS facts-update.log",
+        "Passed":  true,
+        "Detail":  "DTExec exit 0"
+    },
+    {
+        "Check":  "Fact UPDATE repair fait_stock_actuel",
+        "Passed":  true,
+        "Detail":  "Native UPDATE routes restored stock measures, nullable attributes and purchase amount"
+    },
+    {
+        "Check":  "Fact UPDATE repair fait_achats",
+        "Passed":  true,
+        "Detail":  "Native UPDATE routes restored stock measures, nullable attributes and purchase amount"
+    },
+    {
+        "Check":  "SSIS facts-source-reclassification.log",
+        "Passed":  true,
+        "Detail":  "DTExec exit 0"
+    },
+    {
+        "Check":  "Remove reclassified invoice facts",
+        "Passed":  true,
+        "Detail":  "Invoice changed to draft no longer contributes purchases"
+    },
+    {
+        "Check":  "SSIS facts-source-restored.log",
+        "Passed":  true,
+        "Detail":  "DTExec exit 0"
+    },
+    {
+        "Check":  "Restored source and warehouse dim_client",
+        "Passed":  true,
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "Restored source and warehouse dim_fournisseur",
+        "Passed":  true,
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "Restored source and warehouse dim_produit",
+        "Passed":  true,
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "Restored source and warehouse dim_paiement",
+        "Passed":  true,
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "Restored source and warehouse dim_temps",
+        "Passed":  true,
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "Restored source and warehouse fait_stock_actuel",
+        "Passed":  true,
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "Restored source and warehouse fait_achats",
+        "Passed":  true,
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "SQL reconciliation and trusted foreign keys",
+        "Passed":  true,
+        "Detail":  "Bidirectional row and measure comparisons for both facts, calendar and dimensions validated"
+    },
+    {
+        "Check":  "Five dimensions and two facts",
+        "Passed":  true,
+        "Detail":  "{\"dim_fournisseur\":116,\"dim_client\":82,\"fait_achats\":6964,\"dim_produit\":6842,\"dim_temps\":730,\"fait_stock_actuel\":6842,\"dim_paiement\":6}"
+    }
+]
