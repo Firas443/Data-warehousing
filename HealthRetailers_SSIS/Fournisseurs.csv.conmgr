@@ -1,0 +1,110 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Fournisseurs.csv"
+  DTS:DTSID="{0492FAEF-33B5-4525-8036-F69378DED857}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1036"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x0022_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Users\amoul\OneDrive\Bureau\3AI\OneDrive_1_24-09-2026\Fournisseurs - 24112025081816 (2).csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Code"
+          DTS:DTSID="{2F282CDD-B396-4A88-A518-6F545D1A5761}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Nom"
+          DTS:DTSID="{752A5468-57A8-4847-B5FA-D3E29B27B92F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Adresse"
+          DTS:DTSID="{B37C10EB-A565-42B3-8E24-A3889179BFE9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Code postal"
+          DTS:DTSID="{B5109EDD-1F97-4BC4-AA5E-0697E965BEFF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Ville"
+          DTS:DTSID="{D0C69547-06AE-476E-B108-0C4110F0E5B2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Pays"
+          DTS:DTSID="{74DFB977-6FCD-4157-A322-901221B53C77}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="E-Mail"
+          DTS:DTSID="{2D148626-B87D-4B63-99E1-1F0FC4FED66C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Site Web"
+          DTS:DTSID="{01A5BEB3-3168-4E6F-BF93-6F2671BB0AA2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Solde"
+          DTS:DTSID="{643C5869-83B7-4552-8F8F-7C3226E0D5F1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="4000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Solde initial"
+          DTS:DTSID="{6F9645BE-C879-4F2D-8DAD-8048ED801EF8}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

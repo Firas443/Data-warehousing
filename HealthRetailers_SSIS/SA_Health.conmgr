@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Connexion de données2"
+  DTS:DTSID="{86260499-4F22-4727-BD63-EEF3CEBCD0DD}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Initial Catalog=SA_Health;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-HealthRetailers_SSIS-{86260499-4F22-4727-BD63-EEF3CEBCD0DD}Connexion de données2;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
