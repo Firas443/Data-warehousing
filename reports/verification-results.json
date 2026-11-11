@@ -215,6 +215,21 @@
         "Detail":  "6964 rows, identical attributes after second full run"
     },
     {
+        "Check":  "Idempotency fait_ventes",
+        "Passed":  true,
+        "Detail":  "25743 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "Idempotency fait_encaissements",
+        "Passed":  true,
+        "Detail":  "10467 rows, identical attributes after second full run"
+    },
+    {
+        "Check":  "Idempotency fait_decaissements",
+        "Passed":  true,
+        "Detail":  "502 rows, identical attributes after second full run"
+    },
+    {
         "Check":  "SSIS dimension-null-and-update.log",
         "Passed":  true,
         "Detail":  "DTExec exit 0"
@@ -255,9 +270,44 @@
         "Detail":  "Dimension restored to expected source values"
     },
     {
+        "Check":  "NULL/change repair fait_ventes",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "NULL/change repair fait_encaissements",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
+        "Check":  "NULL/change repair fait_decaissements",
+        "Passed":  true,
+        "Detail":  "Dimension restored to expected source values"
+    },
+    {
         "Check":  "Stock NULL fixture has known threshold",
         "Passed":  true,
         "Detail":  "Product 312"
+    },
+    {
+        "Check":  "Update fixture fait_ventes",
+        "Passed":  true,
+        "Detail":  "Source key 1"
+    },
+    {
+        "Check":  "Update fixture fait_encaissements",
+        "Passed":  true,
+        "Detail":  "Source key -16141"
+    },
+    {
+        "Check":  "Update fixture fait_decaissements",
+        "Passed":  true,
+        "Detail":  "Source key -1547"
+    },
+    {
+        "Check":  "Sale surrogate-key fixture has a different valid product",
+        "Passed":  true,
+        "Detail":  "Sale 1"
     },
     {
         "Check":  "SSIS facts-update.log",
@@ -267,12 +317,27 @@
     {
         "Check":  "Fact UPDATE repair fait_stock_actuel",
         "Passed":  true,
-        "Detail":  "Native UPDATE routes restored stock measures, nullable attributes and purchase amount"
+        "Detail":  "Native UPDATE restored the source values"
     },
     {
         "Check":  "Fact UPDATE repair fait_achats",
         "Passed":  true,
-        "Detail":  "Native UPDATE routes restored stock measures, nullable attributes and purchase amount"
+        "Detail":  "Native UPDATE restored the source values"
+    },
+    {
+        "Check":  "Fact UPDATE repair fait_ventes",
+        "Passed":  true,
+        "Detail":  "Native UPDATE restored the source values"
+    },
+    {
+        "Check":  "Fact UPDATE repair fait_encaissements",
+        "Passed":  true,
+        "Detail":  "Native UPDATE restored the source values"
+    },
+    {
+        "Check":  "Fact UPDATE repair fait_decaissements",
+        "Passed":  true,
+        "Detail":  "Native UPDATE restored the source values"
     },
     {
         "Check":  "SSIS facts-source-reclassification.log",
@@ -325,13 +390,28 @@
         "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
     },
     {
-        "Check":  "SQL reconciliation and trusted foreign keys",
+        "Check":  "Restored source and warehouse fait_ventes",
         "Passed":  true,
-        "Detail":  "Bidirectional row and measure comparisons for both facts, calendar and dimensions validated"
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
     },
     {
-        "Check":  "Five dimensions and two facts",
+        "Check":  "Restored source and warehouse fait_encaissements",
         "Passed":  true,
-        "Detail":  "{\"dim_fournisseur\":116,\"dim_client\":82,\"fait_achats\":6964,\"dim_produit\":6842,\"dim_temps\":730,\"fait_stock_actuel\":6842,\"dim_paiement\":6}"
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "Restored source and warehouse fait_decaissements",
+        "Passed":  true,
+        "Detail":  "Reinserted valid invoice lines and restored baseline after fixture"
+    },
+    {
+        "Check":  "SQL reconciliation and trusted foreign keys",
+        "Passed":  true,
+        "Detail":  "All five facts, payment totals, calendar and dimensions validated"
+    },
+    {
+        "Check":  "Five dimensions and five facts",
+        "Passed":  true,
+        "Detail":  "{\"dim_fournisseur\":116,\"fait_decaissements\":502,\"dim_client\":82,\"fait_ventes\":25743,\"fait_achats\":6964,\"dim_produit\":6842,\"dim_temps\":730,\"fait_stock_actuel\":6842,\"dim_paiement\":6,\"fait_encaissements\":10467}"
     }
 ]

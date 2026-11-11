@@ -1,4 +1,4 @@
-$ErrorActionPreference='Stop'
+﻿$ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
 $cfg=Get-Content (Join-Path $root 'settings.example.json') -Raw | ConvertFrom-Json
 $ispac=Join-Path $root 'HealthRetailers_SSIS\bin\Development\HealthRetailers_SSIS.ispac'
@@ -43,7 +43,7 @@ try {
   $hash=[DataHash]::Calculate($sa,"SELECT $cols FROM dbo.[$($source.table)]")
   Check "Lossless Unicode $($source.table)" ($hash -eq $source.contentHash) 'All cells and duplicate rows reconciled with original source'
  }
- $tables=@('dim_client','dim_fournisseur','dim_produit','dim_paiement','dim_temps','fait_stock_actuel','fait_achats')
+ $tables=@('dim_client','dim_fournisseur','dim_produit','dim_paiement','dim_temps','fait_stock_actuel','fait_achats','fait_ventes','fait_encaissements','fait_decaissements')
  $before=@{};$counts=@{}
  foreach($table in $tables){$before[$table]=[DataHash]::Calculate($dw,"SELECT * FROM dbo.$table");$cmd=$dw.CreateCommand();$cmd.CommandText="SELECT COUNT(*) FROM dbo.$table";$counts[$table]=$cmd.ExecuteScalar();$cmd.Dispose()}
  RunPackage 'Master.dtsx' 'master-rerun.log'
@@ -65,6 +65,15 @@ try {
  $cmd=$dw.CreateCommand();$cmd.CommandText='SELECT MIN(Product_Id) FROM dbo.fait_stock_actuel WHERE QuantiteAlerte IS NOT NULL';$stockId=$cmd.ExecuteScalar();$cmd.Dispose()
  Check 'Stock NULL fixture has known threshold' ($stockId -isnot [DBNull]) "Product $stockId"
  $factFixtures=@(@('fait_stock_actuel','QuantiteActuelle','Product_Id',$stockId,'-9999'),@('fait_stock_actuel','QuantiteAlerte','Product_Id',$stockId,'NULL'),@('fait_stock_actuel','EstSousSeuil','Product_Id',$stockId,'NULL'),@('fait_achats','MontantAchat_HT','Id',$purchaseId,'-9999'))
+ foreach($newFact in @(@('fait_ventes','CA_HT'),@('fait_encaissements','Amount'),@('fait_decaissements','Amount'))){
+  $cmd=$dw.CreateCommand();$cmd.CommandText="SELECT MIN(Id) FROM dbo.[$($newFact[0])]";$id=$cmd.ExecuteScalar();$cmd.Dispose()
+  Check "Update fixture $($newFact[0])" ($id -isnot [DBNull]) "Source key $id"
+  $factFixtures+=,@($newFact[0],$newFact[1],'Id',$id,'-9999')
+ }
+ $cmd=$dw.CreateCommand();$cmd.CommandText='SELECT MIN(Id) FROM dbo.fait_ventes';$saleId=$cmd.ExecuteScalar();$cmd.Dispose()
+ $cmd=$dw.CreateCommand();$cmd.CommandText="SELECT MIN(p.Produit_SK) FROM dbo.dim_produit p CROSS JOIN dbo.fait_ventes v WHERE v.Id=$saleId AND p.Produit_SK<>v.Produit_SK";$otherProductKey=$cmd.ExecuteScalar();$cmd.Dispose()
+ Check 'Sale surrogate-key fixture has a different valid product' ($otherProductKey -isnot [DBNull]) "Sale $saleId"
+ $factFixtures+=,@('fait_ventes','Produit_SK','Id',$saleId,$otherProductKey)
  $savedFacts=@()
  try {
   foreach($f in $factFixtures){
@@ -72,7 +81,7 @@ try {
    Sql $dw "UPDATE dbo.[$($f[0])] SET [$($f[1])]=$($f[4]) WHERE [$($f[2])]=$($f[3])"
   }
   RunPackage 'ETL_SA_DW.dtsx' 'facts-update.log'
-  foreach($table in @('fait_stock_actuel','fait_achats')){Check "Fact UPDATE repair $table" ([DataHash]::Calculate($dw,"SELECT * FROM dbo.$table") -eq $before[$table]) 'Native UPDATE routes restored stock measures, nullable attributes and purchase amount'}
+  foreach($table in @('fait_stock_actuel','fait_achats','fait_ventes','fait_encaissements','fait_decaissements')){Check "Fact UPDATE repair $table" ([DataHash]::Calculate($dw,"SELECT * FROM dbo.$table") -eq $before[$table]) 'Native UPDATE restored the source values'}
  } finally {
   foreach($s in $savedFacts){$f=$s[0];$cmd=$dw.CreateCommand();$cmd.CommandText="UPDATE dbo.[$($f[0])] SET [$($f[1])]=@v WHERE [$($f[2])]=$($f[3])";$null=$cmd.Parameters.AddWithValue('@v',$s[1]);$null=$cmd.ExecuteNonQuery();$cmd.Dispose()}
  }
@@ -89,8 +98,8 @@ try {
  }
  foreach($table in $tables){Check "Restored source and warehouse $table" ([DataHash]::Calculate($dw,"SELECT * FROM dbo.$table") -eq $before[$table]) 'Reinserted valid invoice lines and restored baseline after fixture'}
  & sqlcmd -S $cfg.Server -E -C -b -f 65001 -v "StagingDatabase=$($cfg.StagingDatabase)" "WarehouseDatabase=$($cfg.WarehouseDatabase)" -i (Join-Path $root 'sql\99_verifications.sql') > (Join-Path $root 'reports\sql-validation.log')
- Check 'SQL reconciliation and trusted foreign keys' ($LASTEXITCODE -eq 0) 'Bidirectional row and measure comparisons for both facts, calendar and dimensions validated'
- Check 'Five dimensions and two facts' (($counts.Keys | Measure-Object).Count -eq 7) ($counts | ConvertTo-Json -Compress)
+ Check 'SQL reconciliation and trusted foreign keys' ($LASTEXITCODE -eq 0) 'All five facts, payment totals, calendar and dimensions validated'
+ Check 'Five dimensions and five facts' (($counts.Keys | Measure-Object).Count -eq 10) ($counts | ConvertTo-Json -Compress)
  $report=@"
 # Verification report
 
@@ -98,7 +107,7 @@ Verified: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')
 
 Result: $($results.Count) checks passed. Native SQL Server 2022 SSIS build and execution.
 
-| Dimension | Rows |
+| Table | Rows |
 |---|---:|
 | dim_client | $($counts.dim_client) |
 | dim_fournisseur | $($counts.dim_fournisseur) |
@@ -107,16 +116,19 @@ Result: $($results.Count) checks passed. Native SQL Server 2022 SSIS build and e
 | dim_temps | $($counts.dim_temps) |
 | fait_stock_actuel | $($counts.fait_stock_actuel) |
 | fait_achats | $($counts.fait_achats) |
+| fait_ventes | $($counts.fait_ventes) |
+| fait_encaissements | $($counts.fait_encaissements) |
+| fait_decaissements | $($counts.fait_decaissements) |
 
-Five dimensions and two facts. All 17 staging tables reconcile with source row counts and cell-level multiset SHA-256 hashes. Null and empty CSV cells are equivalent in this comparison; duplicate rows are preserved. Raw file byte hashes are recorded separately in source-manifest.json.
+Five dimensions and five facts. All 17 staging tables reconcile with source row counts and cell-level multiset SHA-256 hashes. Null and empty CSV cells are equivalent in this comparison; duplicate rows are preserved. Raw file byte hashes are recorded separately in source-manifest.json.
 
 The full Master succeeded twice. Every dimension has identical keys and attributes after the second execution. The dimension package repaired three deliberately introduced NULL labels and a changed payment label; all dimension hashes then matched the baseline. Fixtures were restored in a finally block.
 
 Evidence: build.log, master.log, master-rerun.log, dimension-null-and-update.log, verification-results.json, source-manifest.json.
 
-The two fact UPDATE paths repair deliberately changed measures and nullable stock attributes. A validated invoice changed to draft is removed from purchases; restored source state causes its lines to be inserted again. All seven table hashes match the baseline afterward. SQL assertions compare every fact row and measure against eligible source records and require enabled, trusted foreign keys.
+The five fact UPDATE paths repair deliberately changed measures, nullable stock attributes and a sale's incorrect product surrogate key. A validated invoice changed to draft is removed from purchases. Restoring the source state causes its lines to be inserted again. All ten table hashes match the baseline afterward. SQL assertions compare every fact row and measure against eligible source records, reconcile each payment, and verify all 14 trusted foreign keys and their business-member mappings.
 
-Scope: current stock and validated supplier invoices only, excluding supplier credit notes. Stock capture date remains NULL because the export does not establish it. Missing source labels, alert thresholds and attributes remain explicitly unknown.
+The warehouse covers current stock, validated supplier invoices, sales and sales returns, customer receipts, and supplier disbursements. Stock capture date remains NULL because the export does not establish it. Missing cost, alert threshold and document links stay NULL.
 "@
  $report | Set-Content -Encoding UTF8 (Join-Path $root 'reports\FINAL-REPORT.md')
  Write-Host "PASS: $($results.Count) checks."

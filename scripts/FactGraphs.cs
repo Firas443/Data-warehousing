@@ -13,10 +13,18 @@ public static class TeacherFacts {
   paths[0].Node.Instantiate().SetComponentProperty("NoMatchBehavior",0);
   return paths[0];
  }
- static void Upsert(VisualGraph g,Edge from,ConnectionManager reference,ConnectionManager writer,ConnectionManager updater,string table,string key,params string[] attrs) {
+ static Edge SurrogateKey(VisualGraph g,Edge from,ConnectionManager cm,string table,string businessKey,string surrogateKey) {
+  var paths=g.Lookup(from,"Recherche "+table+" - "+surrogateKey,cm,
+   "SELECT ["+businessKey+"] AS RefKey,["+surrogateKey+"] FROM dbo.["+table+"]",
+   businessKey,"RefKey",surrogateKey);
+  paths[0].Node.Instantiate().SetComponentProperty("NoMatchBehavior",0);
+  return paths[0];
+ }
+ internal static void Upsert(VisualGraph g,Edge from,ConnectionManager reference,ConnectionManager writer,ConnectionManager updater,string table,string key,params string[] attrs) {
   var sql="SELECT ["+key+"] AS OldKey";var copy=new List<string>();
   foreach(var c in attrs){sql+=",["+c+"] AS [Old_"+c+"]";copy.Add("Old_"+c);}
-  var routes=g.Lookup(from,"Recherche du fait existant",reference,sql+" FROM dbo.["+table+"]",key,"OldKey",copy.ToArray());
+  var lookupName=table.StartsWith("dim_",StringComparison.Ordinal)?"Recherche dans la dimension":"Recherche du fait existant";
+  var routes=g.Lookup(from,lookupName,reference,sql+" FROM dbo.["+table+"]",key,"OldKey",copy.ToArray());
   var maps=new List<string>{key};maps.AddRange(attrs);
   g.Destination(routes[1],"INSERT - "+table,writer,"dbo.["+table+"]",maps.ToArray());
   var comparisons=new List<string>();var parameters=new List<string>();var update="UPDATE dbo.["+table+"] SET ";
@@ -33,8 +41,8 @@ public static class TeacherFacts {
   var g=new VisualGraph(pkg,"alim_fait_stock_actuel");
   var e=g.Source("SA - quantites et seuils par produit","SELECT Product_Id,QuantiteActuelle,QuantiteAlerte FROM dbo.v_source_stock",source);
   e=g.Derived(e,"Colonne derivee - date inconnue et alerte","DateKey=NULL(DT_I4)","EstSousSeuil=ISNULL([QuantiteAlerte]) ? NULL(DT_BOOL) : [QuantiteActuelle] < [QuantiteAlerte]");
-  e=Key(g,e,reference,"dim_produit","Product_Id");
-  Upsert(g,e,reference,writer,updater,"fait_stock_actuel","Product_Id","DateKey","QuantiteActuelle","QuantiteAlerte","EstSousSeuil");
+  e=SurrogateKey(g,e,reference,"dim_produit","Product_Id","Produit_SK");
+  Upsert(g,e,reference,writer,updater,"fait_stock_actuel","Product_Id","Produit_SK","DateKey","QuantiteActuelle","QuantiteAlerte","EstSousSeuil");
   return g.Task;
  }
  public static TaskHost Purchases(Package pkg,ConnectionManager source,ConnectionManager reference,ConnectionManager writer,ConnectionManager updater,ConnectionManager reject) {
@@ -45,8 +53,42 @@ public static class TeacherFacts {
   routes[1].Output.Name="BROUILLONS OU COMMENTAIRES";
   g.Destination(routes[1],"SA - conserver les lignes exclues",reject,"dbo.Rejets_Faits","Fait","SourceId=Id","Motif");
   e=g.Derived(routes[0],"Colonnes derivees - date et montant HT net","DateKey=(DT_I4)(YEAR([DocumentDate])*10000+MONTH([DocumentDate])*100+DAY([DocumentDate]))","QuantiteAchetee=(DT_NUMERIC,18,4)[Quantity]","MontantAchat_HT=(DT_NUMERIC,18,4)([TotalHt]-[RemiseDocument_HT])");
-  e=Key(g,e,reference,"dim_temps","DateKey");e=Key(g,e,reference,"dim_produit","Product_Id");e=Key(g,e,reference,"dim_fournisseur","Fournisseur_Id");
-  Upsert(g,e,reference,writer,updater,"fait_achats","Id","Document_Id","DateKey","Product_Id","Fournisseur_Id","QuantiteAchetee","MontantAchat_HT");
+  e=Key(g,e,reference,"dim_temps","DateKey");
+  e=SurrogateKey(g,e,reference,"dim_produit","Product_Id","Produit_SK");
+  e=SurrogateKey(g,e,reference,"dim_fournisseur","Fournisseur_Id","Fournisseur_SK");
+  Upsert(g,e,reference,writer,updater,"fait_achats","Id","Document_Id","DateKey","Product_Id","Produit_SK","Fournisseur_Id","Fournisseur_SK","QuantiteAchetee","MontantAchat_HT");
+  return g.Task;
+ }
+ public static TaskHost Sales(Package pkg,ConnectionManager source,ConnectionManager reference,ConnectionManager writer,ConnectionManager updater,ConnectionManager reject) {
+  var g=new VisualGraph(pkg,"alim_fait_ventes");
+  var e=g.Source("SA - lignes de vente","SELECT * FROM dbo.v_source_ventes",source);
+  e=g.Derived(e,"Colonne derivee - nom du fait","Fait=(DT_WSTR,40)\"fait_ventes\"");
+  var routes=g.Split(e,"Fractionnement conditionnel - ventes retenues","VENTES RETENUES","[Motif] == \"ACCEPTE\"");
+  routes[1].Output.Name="LIGNES EXCLUES";
+  g.Destination(routes[1],"SA - conserver les lignes exclues",reject,"dbo.Rejets_Faits","Fait","SourceId=Id","Motif");
+  e=DateKey(g,routes[0],"DocumentDate");
+  e=Key(g,e,reference,"dim_temps","DateKey");
+  e=SurrogateKey(g,e,reference,"dim_produit","Product_Id","Produit_SK");
+  e=SurrogateKey(g,e,reference,"dim_client","Company_Id","Client_SK");
+  Upsert(g,e,reference,writer,updater,"fait_ventes","Id","Document_Id","DateKey","Product_Id","Produit_SK","Company_Id","Client_SK","QuantiteVendue","Remise_HT","CA_HT","Cout_HT");
+  return g.Task;
+ }
+ static Edge DateKey(VisualGraph g,Edge e,string column) {
+  var date="["+column+"]";
+  return g.Derived(e,"Colonne derivee - cle de date","DateKey=(DT_I4)(YEAR("+date+")*10000+MONTH("+date+")*100+DAY("+date+"))");
+ }
+ public static TaskHost Payments(Package pkg,ConnectionManager source,ConnectionManager reference,ConnectionManager writer,ConnectionManager updater,bool supplier) {
+  var table=supplier?"fait_decaissements":"fait_encaissements";
+  var partnerKey=supplier?"Fournisseur_Id":"Company_Id";
+  var partnerSk=supplier?"Fournisseur_SK":"Client_SK";
+  var g=new VisualGraph(pkg,"alim_"+table);
+  var e=g.Source("SA - reglements et affectations",
+   "SELECT Id,Payment_Id,Document_Id,PaymentDate,PaymentMode_Id,"+partnerKey+",Amount FROM dbo.v_source_reglements WHERE IsSupplier="+(supplier?"1":"0"),source);
+  e=DateKey(g,e,"PaymentDate");
+  e=Key(g,e,reference,"dim_temps","DateKey");
+  e=SurrogateKey(g,e,reference,"dim_paiement","PaymentMode_Id","Paiement_SK");
+  e=SurrogateKey(g,e,reference,supplier?"dim_fournisseur":"dim_client",partnerKey,partnerSk);
+  Upsert(g,e,reference,writer,updater,table,"Id","Payment_Id","Document_Id","DateKey","PaymentMode_Id","Paiement_SK",partnerKey,partnerSk,"Amount");
   return g.Task;
  }
 }
@@ -93,6 +135,23 @@ public class VisualGraph {
   w.SetComponentProperty("AccessMode",2);w.SetComponentProperty("SqlCommand",sql);
   w.AcquireConnections(null);w.ReinitializeMetaData();w.ReleaseConnections();return new Edge(n,n.OutputCollection[0]);
  }
+ public Edge Table(string name,string table,ConnectionManager cm,params string[] columns) {
+  var n=New("DTSAdapter.OLEDBSource.8",name);Connection(n,cm);var w=n.Instantiate();
+  w.SetComponentProperty("AccessMode",0);w.SetComponentProperty("OpenRowset","dbo.["+table+"]");
+  w.AcquireConnections(null);w.ReinitializeMetaData();w.ReleaseConnections();
+  var output=n.OutputCollection[0];
+  var keep=new HashSet<string>(columns);
+  var unused=new List<int>();
+  foreach(IDTSOutputColumn100 col in output.OutputColumnCollection)
+   if(!keep.Contains(col.Name))unused.Add(col.ID);
+  foreach(int id in unused)output.OutputColumnCollection.RemoveObjectByID(id);
+  var errors=n.OutputCollection[1].OutputColumnCollection;
+  unused.Clear();
+  foreach(IDTSOutputColumn100 col in errors)
+   if(!keep.Contains(col.Name) && col.Name!="ErrorCode" && col.Name!="ErrorColumn")unused.Add(col.ID);
+  foreach(int id in unused)errors.RemoveObjectByID(id);
+  return new Edge(n,output);
+ }
  public Edge Derived(Edge from,string name,params string[] definitions) {
   var n=New("DTSTransform.DerivedColumn.8",name);Link(from,n);var w=n.Instantiate();
   foreach(string def in definitions) {
@@ -112,20 +171,84 @@ public class VisualGraph {
   return new[]{new Edge(n,yes),new Edge(n,fallback)};
  }
  public Edge[] Lookup(Edge from,string name,ConnectionManager cm,string sql,string inputKey,string refKey,params string[] copy) {
+  return LookupCore(from,name,cm,sql,inputKey,refKey,false,true,copy);
+ }
+ public Edge OptionalLookup(Edge from,string name,ConnectionManager cm,string sql,string inputKey,string refKey,params string[] copy) {
+  return LookupCore(from,name,cm,sql,inputKey,refKey,true,true,copy)[0];
+ }
+ Edge[] LookupCore(Edge from,string name,ConnectionManager cm,string sql,string inputKey,string refKey,bool optional,bool unique,params string[] copy) {
   var n=New("DTSTransform.Lookup.8",name);Connection(n,cm);Link(from,n);var w=n.Instantiate();
   try{w.SetComponentProperty("SqlCommand",sql);}catch(Exception ex){throw new Exception("Lookup SQL command",ex);}
-  try{w.SetComponentProperty("NoMatchBehavior",1);}catch(Exception ex){throw new Exception("Lookup no-match setting",ex);}
-  try{w.SetComponentProperty("TreatDuplicateKeysAsError",true);}catch(Exception ex){throw new Exception("Lookup duplicate-key setting",ex);}
+  try{w.SetComponentProperty("NoMatchBehavior",optional?0:1);}catch(Exception ex){throw new Exception("Lookup no-match setting",ex);}
+  try{w.SetComponentProperty("TreatDuplicateKeysAsError",unique);}catch(Exception ex){throw new Exception("Lookup duplicate-key setting",ex);}
   w.AcquireConnections(null);w.ReinitializeMetaData();
   var lookupInput=n.InputCollection[0];var lookupVirtual=lookupInput.GetVirtualInput();
   var join=w.SetUsageType(lookupInput.ID,lookupVirtual,lookupVirtual.VirtualInputColumnCollection[inputKey].LineageID,DTSUsageType.UT_READONLY);
   w.SetInputColumnProperty(lookupInput.ID,join.ID,"JoinToReferenceColumn",refKey);
   var output=n.OutputCollection[0];
+  if(optional)output.ErrorRowDisposition=DTSRowDisposition.RD_IgnoreFailure;
   foreach(string col in copy) {
    var c=w.InsertOutputColumnAt(output.ID,output.OutputColumnCollection.Count,col,"");
    w.SetOutputColumnProperty(output.ID,c.ID,"CopyFromReferenceColumn",col);
   }
   w.ReleaseConnections();return new[]{new Edge(n,n.OutputCollection[0]),new Edge(n,n.OutputCollection[1])};
+ }
+ public Edge[] ExistsLookup(Edge from,string name,ConnectionManager cm,string sql,string inputKey,string refKey) {
+  return LookupCore(from,name,cm,sql,inputKey,refKey,false,false,new string[0]);
+ }
+ public Edge Sort(Edge from,string name,string key,bool distinct,params string[] extra) {
+  var n=New("Microsoft.Sort",name);var w=n.Instantiate();Link(from,n);
+  w.SetComponentProperty("EliminateDuplicates",distinct);
+  var input=n.InputCollection[0];var vi=input.GetVirtualInput();
+  var cols=new List<string>{key};cols.AddRange(extra);
+  foreach(var col in cols) {
+   var selected=w.SetUsageType(input.ID,vi,vi.VirtualInputColumnCollection[col].LineageID,DTSUsageType.UT_READONLY);
+   w.SetInputColumnProperty(input.ID,selected.ID,"NewSortKeyPosition",col==key?1:0);
+  }
+  return new Edge(n,n.OutputCollection[0]);
+ }
+ public Edge Union(string name,string[] columns,params Edge[] branches) {
+  var n=New("Microsoft.UnionAll",name);var w=n.Instantiate();
+  for(int i=0;i<branches.Length;i++) {
+   var input=n.InputCollection[n.InputCollection.Count-1];
+   Pipe.PathCollection.New().AttachPathAndPropagateNotifications(branches[i].Output,input);
+   var vi=input.GetVirtualInput();
+   foreach(var col in columns) {
+    var selected=w.SetUsageType(input.ID,vi,vi.VirtualInputColumnCollection[col].LineageID,DTSUsageType.UT_READONLY);
+    var output=n.OutputCollection[0].OutputColumnCollection[col];
+    w.SetInputColumnProperty(input.ID,selected.ID,"OutputColumnLineageID",output.LineageID);
+   }
+  }
+  return new Edge(n,n.OutputCollection[0]);
+ }
+ public Edge LeftJoin(Edge left,Edge right,string name,string key,string[] incoming,string[] existing) {
+  var n=New("Microsoft.MergeJoin",name);var w=n.Instantiate();
+  n.CustomPropertyCollection["JoinType"].Value=1;n.CustomPropertyCollection["NumKeyColumns"].Value=1;
+  Pipe.PathCollection.New().AttachPathAndPropagateNotifications(left.Output,n.InputCollection[0]);
+  Pipe.PathCollection.New().AttachPathAndPropagateNotifications(right.Output,n.InputCollection[1]);
+  var output=n.OutputCollection[0];
+  for(int i=0;i<2;i++) {
+   var input=n.InputCollection[i];var vi=input.GetVirtualInput();
+   foreach(var col in i==0?incoming:existing) {
+    var virtualColumn=vi.VirtualInputColumnCollection[col];
+    if(virtualColumn==null) {
+     var available=new List<string>();
+     foreach(IDTSVirtualInputColumn100 c in vi.VirtualInputColumnCollection)available.Add(c.Name);
+     throw new InvalidOperationException(name+" input "+i+" is missing "+col+"; found "+String.Join(", ",available));
+    }
+    w.SetUsageType(input.ID,vi,virtualColumn.LineageID,DTSUsageType.UT_READONLY);
+    var selected=input.InputColumnCollection.GetInputColumnByLineageID(virtualColumn.LineageID);
+    foreach(IDTSOutputColumn100 projected in output.OutputColumnCollection) {
+     var mapping=projected.CustomPropertyCollection["InputColumnID"];
+     if(mapping!=null && Convert.ToInt32(mapping.Value)==selected.ID) {
+      projected.Name=(i==0?"":"Old_")+col;
+      break;
+     }
+    }
+   }
+  }
+  output.IsSorted=true;
+  return new Edge(n,output);
  }
  public Edge Conversion(Edge from,string name,string input,string output,DataType type,int precision,int scale) {
   var n=New("DTSTransform.DataConvert.8",name);Link(from,n);var w=n.Instantiate();var i=n.InputCollection[0];var vi=i.GetVirtualInput();
